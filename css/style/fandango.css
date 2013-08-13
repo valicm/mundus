@@ -1,0 +1,7 @@
+a, .breadcrumbs li a, .breadcrumbs li span  { color: #B53389; }
+ul.tabs li.active, ul.tabs li.active { border-color:#B53389; }
+ul.pager li.pager-current, ul.pager li.pager-current a:hover, .pager li.current a:focus, .readers-choice a:before, .progress .meter { background: #B53389; }
+
+.top-bar-section #main-menu li a:hover { color: #B53389; }
+.top-bar-section #main-menu li.leaf a.active,
+.top-bar-section #main-menu li.expanded a.active { border-color:#B53389; }
