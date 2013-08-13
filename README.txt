@@ -5,29 +5,27 @@ Only requirement  is Jquery update module (check documentation below)
 Also in theme folder is detailed documentation about how to setup and get most out of this theme.
 (Documentation v1 - Mundus.pdf)
 
-<strong>DEMO: </strong> <a href="http://themes.valic.me">http://themes.valic.me</a>
+DEMO: http://themes.valic.me
 
 
-<strong>This theme have following features out of box</strong>
+This theme have following features out of box
 
-<ul>
-  <li>Views responsive styles (Grid, Table, Unformatted and HTML  list)</li>
-  <li>Built in node gallery (slider gallery) - no need for additional modules</li>
-  <li>Modal box for login</li>
-  <li>Social profiles / block</li>
-  <li>Modal box for social block</li>
-  <li>Orbit slideshow / slider</li>
-  <li>Font icons</li>
-  <li>Google fonts</li>
-  <li>Readers choice block</li>
-  <li>Foundation tables, block grid and grid support</li>
-  <li>Very well documented (28 pages PDF)</li>
-  <li>Videos how to setup theme, views, fonts, etc..</li>
-</ul>
+  Views responsive styles (Grid, Table, Unformatted and HTML  list)
+  Built in node gallery (slider gallery) - no need for additional modules
+  Modal box for login
+  Social profiles / block
+  Modal box for social block
+  Orbit slideshow / slider
+  Font icons
+  Google fonts
+  Readers choice block
+  Foundation tables, block grid and grid support
+  Very well documented (28 pages PDF)
+  Videos how to setup theme, views, fonts, etc..
 
 
-<strong>Theme requirement - <a href="https://drupal.org/project/jquery_update">Jquery update</a></strong>
-<em>After installing jQuery Update  module, go to settings page and select jQuery version 1.7
-(theme is working without jQuery update, but image gallery slideshow will be broken)</em>
+Theme requirement - >Jquery update (https://drupal.org/project/jquery_update)
+After installing jQuery Update  module, go to settings page and select jQuery version 1.7
+(theme is working without jQuery update, but image gallery slideshow will be broken)
 
-<strong>Notice:</strong> Limited IE8 support / funcionality (duo to mobile first approach)
+Notice: Limited IE8 support / funcionality (duo to mobile first approach)
