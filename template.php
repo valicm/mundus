@@ -1,11 +1,22 @@
 <?php
 
 /**
+ * @file
+ * Provides preprocess logic and other utilities for Mundus and Foundation integration.
+ *
+ * @todo
+ *
+ *    -- Build Drupal 8 version
+ *    -- Cleaner version (more framework oriented)
+ */
+
+
+/**
  * Implements hook_preprocess_page()
  */
 function mundus_preprocess_page(&$variables, $hook) {
 
-// RENDER SEARCH FROM INSIDE PAGE TEMPLATE 
+// RENDER SEARCH FROM INSIDE PAGE TEMPLATE
   $mundus_search = drupal_render(drupal_get_form('search_form'));
   $variables['mundus_search'] = $mundus_search;
 
@@ -18,11 +29,11 @@ function mundus_preprocess_page(&$variables, $hook) {
 
 // If it's just not available, display a message to the user:
   else {
-    drupal_set_message(t('<h1>The Foundation framework and icons could not be found. 
-      <p></p>In order to use the Mundus theme, you must download the framework: 
-      <a href="http://foundation.zurb.com/download.php" target="_blank">Click here</a> 
+    drupal_set_message(t('<h1>The Foundation framework and icons could not be found.
+      <p></p>In order to use the Mundus theme, you must download the framework:
+      <a href="http://foundation.zurb.com/download.php" target="_blank">Click here</a>
       and extract it to <em>sites/all/libraries/foundation</em><p></p>
-      Additional you need to download Foundation icons: 
+      Additional you need to download Foundation icons:
       <a href="http://zurb.com/playground/uploads/upload/upload/146/foundation_icons_all.zip" target="_blank">Click here</a>
       and extract it to <em>sites/all/libraries/foundation_icons_all</em>
       </h1>'), 'error');
@@ -60,7 +71,7 @@ function mundus_preprocess_page(&$variables, $hook) {
   drupal_add_js($foundation_path . '/js/foundation/foundation.placeholder.js', array('scope' => 'footer'));
   drupal_add_js($foundation_path . '/js/foundation/foundation.reveal.js', array('scope' => 'footer'));
 
-// Invoke Foundation 
+// Invoke Foundation
   drupal_add_js('jQuery(document).foundation();', array(
     'type' => 'inline',
     'scope' => 'footer'
@@ -126,9 +137,9 @@ function mundus_preprocess_page(&$variables, $hook) {
     'type' => 'file'
   ));
 
-// Adding font family for social icons if we use social icons 
+// Adding font family for social icons if we use social icons
 // (quick fix regarding not able to use directly modified files
-// inside drupal regarding licensing third party code 
+// inside drupal regarding licensing third party code
 // (without this inline css, icons will use font from general icon set,
 //  and display them wrong)
 // Check if we use social profiles feature
@@ -137,9 +148,9 @@ function mundus_preprocess_page(&$variables, $hook) {
         '@font-face {
            font-family: "SocialFoundicons";
            src: url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.eot");
-           src: url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), 
-                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.woff") format("woff"), 
-                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.ttf") format("truetype"), 
+           src: url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"),
+                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.woff") format("woff"),
+                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.ttf") format("truetype"),
                 url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.svg#SocialFoundicons") format("svg");
            font-weight: normal;
            font-style: normal;}', array(
