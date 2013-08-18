@@ -72,7 +72,7 @@
  * @ingroup themeable
  */
 if ($is_front):
-  include ('page--front.tpl.php');
+  include_once ('page--front.tpl.php');
 return;
 endif;
 ?>

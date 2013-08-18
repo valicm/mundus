@@ -39,33 +39,29 @@ function mundus_preprocess_page(&$variables, $hook) {
     drupal_add_css('
       .error {position: fixed; left:5%;right: 0; top:5%; z-index: 500; width:90%; height:90%;}
       .error a {color:#333333;}', array(
-      'group' => CSS_THEME,
-      'type' => 'inline',
+        'group' => CSS_THEME,
+        'type' => 'inline',
     ));
   }
 
   // Adding Foundation css:
-  drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all',));
-  drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all',));
+  drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all'));
+  drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all'));
 
   // Adding Foundation icons css:
-  drupal_add_css($foundation_icon_path . '/foundation_icons_social/stylesheets/social_foundicons.css', array('
-    media' => 'all',
-  ));
+  drupal_add_css($foundation_icon_path . '/foundation_icons_social/stylesheets/social_foundicons.css', array('media' => 'all'));
 
-  drupal_add_css($foundation_icon_path . '/foundation_icons_general_enclosed/stylesheets/general_enclosed_foundicons.css', array(
-    'media' => 'all',
-  ));
+  drupal_add_css($foundation_icon_path . '/foundation_icons_general_enclosed/stylesheets/general_enclosed_foundicons.css', array('media' => 'all'));
 
   // Adding Foundation JS library at bottom of page:
-  drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'footer',));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.js', array('scope' => 'footer',));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.topbar.js', array('scope' => 'footer',));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.cookie.js', array('scope' => 'footer',));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.forms.js', array('scope' => 'footer',));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.orbit.js', array('scope' => 'footer',));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.placeholder.js', array('scope' => 'footer',));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.reveal.js', array('scope' => 'footer',));
+  drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.topbar.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.cookie.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.forms.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.orbit.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.placeholder.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.reveal.js', array('scope' => 'footer'));
 
   // Invoke Foundation:
   drupal_add_js('jQuery(document).foundation();', array(
@@ -150,9 +146,9 @@ function mundus_preprocess_page(&$variables, $hook) {
                 url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.svg#SocialFoundicons") format("svg");
            font-weight: normal;
            font-style: normal;}', array(
-      'group' => CSS_THEME,
-      'type' => 'inline',
-    ));
+            'group' => CSS_THEME,
+            'type' => 'inline',
+          ));
   }
   else {
     // We are not doing anything in case when social profiles are not enabled!
@@ -355,8 +351,7 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-        )
-      );
+    ));
   }
   // Button style preview:
   if (!empty($form['actions']) && !empty($form['actions']['preview'])) {
@@ -365,8 +360,7 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-        )
-      );
+    ));
   }
   // Button style delete:
   if (!empty($form['actions']) && !empty($form['actions']['delete'])) {
@@ -375,8 +369,7 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-        )
-      );
+    ));
   }
 }
 

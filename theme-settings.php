@@ -46,7 +46,7 @@ function mundus_form_system_theme_settings_alter(&$form, $form_state) {
       'dark_spring_green' => t('Dark spring green'),
       'fandango' => t('Fandango'),
       'rust' => t('Rust'),
-      'amaranth' => t('Amaranth')
+      'amaranth' => t('Amaranth'),
     ),
   );
   $form['mundus_login'] = array(
