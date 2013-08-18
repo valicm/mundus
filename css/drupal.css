@@ -404,7 +404,7 @@ ul.links.inline li {
   padding-right: 10px;
 }
 html.js input.form-autocomplete {
-  background-position: 100% 10px ;
+  background-position: 100% 10px;
   background-repeat: no-repeat;
 }
 html.js input.throbbing {
@@ -546,6 +546,6 @@ a.tabledrag-handle .handle {
 /** FOOTER **/
 footer#footer {
   border-top: 1px solid #ccc;
-  padding-top:10px;
+  padding-top: 10px;
   margin-top: 20px;
 }

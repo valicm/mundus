@@ -4,12 +4,11 @@
  * @file
  * Provides preprocess logic and other utilities for
  * Mundus and Foundation integration.
- *
  */
 
 
 /**
- * Implements themename_preprocess_page():
+ * Implements themename_preprocess_page().
  */
 function mundus_preprocess_page(&$variables, $hook) {
 
@@ -43,7 +42,6 @@ function mundus_preprocess_page(&$variables, $hook) {
       'type' => 'inline'
     ));
   }
-
 
   // Adding Foundation css:
   drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all'));
@@ -138,7 +136,7 @@ function mundus_preprocess_page(&$variables, $hook) {
   // (quick fix regarding not able to use directly modified files
   // inside drupal regarding licensing third party code
   // (without this inline css, icons will use font from general icon set,
-  //  and display them wrong)
+  // and display them wrong)
   // Check if we use social profiles feature:
   if (theme_get_setting('social_profiles_top')) {
     drupal_add_css(
@@ -156,11 +154,13 @@ function mundus_preprocess_page(&$variables, $hook) {
     ));
   }
   else {
-    // we are not doing anything in case when social profiles are not enabled!
+    // We are not doing anything in case when social profiles are not enabled!
   }
 }
 
-/** Add mobile viewport, force IE to chrome frame * */
+/**
+* Add mobile viewport, force IE to chrome frame
+*/
 function mundus_html_head_alter(&$head_elements) {
   // HTML5 charset declaration.
   $head_elements['system_meta_content_type']['#attributes'] = array(
@@ -241,7 +241,7 @@ function mundus_css_alter(&$css) {
  * Style main menu / show submenu as dropdown.
  */
 function mundus_links__system_main_menu($vars) {
-  // Get all the main menu links
+  // Get all the main menu links.
   $menu_links = menu_tree_output(menu_tree_all_data('main-menu'));
 
   // Initialize some variables to prevent errors.
@@ -249,7 +249,7 @@ function mundus_links__system_main_menu($vars) {
   $sub_menu = '';
 
   foreach ($menu_links as $key => $link) {
-     // Add special class needed for Foundation dropdown menu to work:
+    // Add special class needed for Foundation dropdown menu to work:
     !empty($link['#below']) ? $link['#attributes']['class'][] = 'has-dropdown' : '';
 
     // Render top level and make sure we have an actual link:
@@ -261,7 +261,7 @@ function mundus_links__system_main_menu($vars) {
           $sub_menu .= '<li class="submenu">' . l($sub_link['#title'], $sub_link['#href']) . '</li>';
         }
       }
-      $output .=!empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
+       &output .=!empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
 
       // Reset dropdown to prevent duplicates:
       unset($sub_menu);
@@ -282,6 +282,9 @@ function mundus_form_comment_form_alter(&$form, &$form_state) {
   $form['author']['homepage']['#access'] = FALSE;
 }
 
+/**
+ * Remove filter tips from comment form.
+ */
 function mundus_customize_comment_form(&$form) {
   $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
   return $form;
@@ -292,12 +295,12 @@ function mundus_customize_comment_form(&$form) {
  */
 function mundus_preprocess_node(&$variables) {
 
-  //If the node is a teaser:
+  // If the node is a teaser:
   if ($variables['teaser']) {
-  //Allow us to use a different template:
+  // Allow us to use a different template:
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '_teaser';
   }
-  //Adding block region to node.tpl.php:
+  // Adding block region to node.tpl.php:
   if ($blocks = block_get_blocks_by_region('node_block')) {
     $variables['node_block'] = $blocks;
   }
@@ -308,7 +311,7 @@ function mundus_preprocess_node(&$variables) {
  */
 function mundus_process_field(&$vars) {
   $element = $vars['element'];
-  // Field type image
+  // Field type image.
   if ($element['#field_type'] == 'image') {
     // Reduce number of images in teaser view mode to single image:
     if ($element['#view_mode'] == 'teaser') {
@@ -346,7 +349,8 @@ function mundus_form_alter(&$form, &$form_state) {
 
   // Button style submit:
   if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
-    $form['actions']['submit']['#attributes'] = array('class' => array(
+    $form['actions']['submit']['#attributes'] = array('class' =>
+      array(
       'secondary',
       'small button',
       'radius'
@@ -355,7 +359,8 @@ function mundus_form_alter(&$form, &$form_state) {
   }
   // Button style preview:
   if (!empty($form['actions']) && !empty($form['actions']['preview'])) {
-    $form['actions']['preview']['#attributes'] = array('class' => array(
+    $form['actions']['preview']['#attributes'] =
+    array('class' => array(
       'secondary',
       'small button',
       'radius'
@@ -399,7 +404,7 @@ function mundus_breadcrumb($vars) {
 }
 
 /**
- * FUNCTION FOR USING SLIDESHOW ON VIEWS:
+ * FUNCTION FOR USING SLIDESHOW ON VIEWS.
  */
 function mundus_preprocess_views_view_list(&$vars) {
   $handler = $vars['view']->style_plugin;

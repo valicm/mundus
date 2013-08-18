@@ -98,7 +98,7 @@ footer ul#social-profile {
 
 @media only screen and (max-width: 48em) {
   footer ul#social-profile {
-    float:left;
+    float: left;
   }
 }
 
@@ -125,7 +125,7 @@ ul#quick-links {
 
 /** FIX button on login form **/
 @media only screen and (min-width: 58.75em) {
-  #login-mundus input.button.small{
+  #login-mundus input.button.small {
     padding-top: 0;
   }
 }
@@ -161,10 +161,10 @@ ul#quick-links {
   .top-bar ul#quick-links li.login,
   .top-bar ul#quick-links li.social {
     font-size: 0.875em;
-    font-weight:normal;
+    font-weight: normal;
   }
   .top-bar ul#quick-links li.social {
-    margin-left:5px;
+    margin-left: 5px;
     margin-right: 5px;
   }
 }
@@ -385,7 +385,7 @@ figure ul {
   margin: 0;
 }
 ul.clearing-thumbs {
-  margin: 0
+  margin: 0;
 }
 ul.clearing-thumbs li {
   list-style-type: none;
@@ -479,15 +479,17 @@ ul.clearing-thumbs li {
   aside#sidebar-first  h2,
   aside#sidebar-first  h3,
   .block h2,
-  .block h3  {
-  font-size: 1.375em;
+  .block h3 {
+    font-size: 1.375em;
   }
 }
 
 
 /** colorbox module fix button **/
-button#cboxNext, button#cboxPrevious,
-button#cboxClose, button#cboxSlideshow {
+button#cboxNext,
+button#cboxPrevious,
+button#cboxClose,
+button#cboxSlideshow {
   margin: 0;
   padding: 0;
   border: 0;

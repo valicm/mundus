@@ -21,10 +21,10 @@
 }
 
 .top-bar ul.title-area {
-  width: 30%
+  width: 30%;
 }
 .top-bar-section .dropdown {
-  width: 100%
+  width: 100%;
 }
 /** FOUNDATION FIX FOR IE7 **/
 .row .row {
@@ -234,7 +234,7 @@
   padding: 0 10px 10px;
 }
 .large-block-grid-4 > li:nth-of-type(4n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-5 > li {
   width: 19%;

@@ -434,7 +434,7 @@ th.hide-for-xlarge {
 .show-for-small {
   display: none!important;
 }
-.hide-for-small {;
+.hide-for-small {
   display: inherit!important;
 }
 .hide-for-medium,
@@ -623,7 +623,7 @@ th.hide-for-portrait {
 }
 table.show-for-portrait,
 table.hide-for-landscape {
-  display: table
+  display: table;
 }
 thead.show-for-portrait,
 thead.hide-for-landscape {
@@ -660,168 +660,168 @@ th.hide-for-landscape {
   width: 100%;
 }
 .small-block-grid-1 > li:nth-of-type(1n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-2 > li {
   padding: 0 10px 10px;
   width: 50%;
 }
 .small-block-grid-2 > li:nth-of-type(2n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-3 > li {
   padding: 0 10px 10px;
   width: 33.33333%;
 }
 .small-block-grid-3 > li:nth-of-type(3n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-4 > li {
   padding: 0 10px 10px;
   width: 25%;
 }
 .small-block-grid-4 > li:nth-of-type(4n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-5 > li {
   padding: 0 10px 10px;
   width: 20%;
 }
 .small-block-grid-5 > li:nth-of-type(5n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-6 > li {
   padding: 0 10px 10px;
   width: 16.66667%;
 }
 .small-block-grid-6 > li:nth-of-type(6n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-7 > li {
   padding: 0 10px 10px;
   width: 14.28571%;
 }
 .small-block-grid-7 > li:nth-of-type(7n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-8 > li {
   padding: 0 10px 10px;
   width: 12.5%;
 }
 .small-block-grid-8 > li:nth-of-type(8n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-9 > li {
   padding: 0 10px 10px;
   width: 11.11111%;
 }
 .small-block-grid-9 > li:nth-of-type(9n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-10 > li {
   padding: 0 10px 10px;
   width: 10%;
 }
 .small-block-grid-10 > li:nth-of-type(10n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-11 > li {
   padding: 0 10px 10px;
   width: 9.09091%;
 }
 .small-block-grid-11 > li:nth-of-type(11n+1) {
-  clear: both
+  clear: both;
 }
 .small-block-grid-12 > li {
   padding: 0 10px 10px;
   width: 8.33333%;
 }
 .small-block-grid-12 > li:nth-of-type(12n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-1 > li {
   padding: 0 10px 10px;
   width: 100%;
 }
 .large-block-grid-1 > li:nth-of-type(1n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-2 > li {
   padding: 0 10px 10px;
   width: 50%;
 }
 .large-block-grid-2 > li:nth-of-type(2n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-3 > li {
   padding: 0 10px 10px;
   width: 33.33333%;
 }
 .large-block-grid-3 > li:nth-of-type(3n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-4 > li {
   padding: 0 10px 10px;
   width: 25%;
 }
 .large-block-grid-4 > li:nth-of-type(4n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-5 > li {
   padding: 0 10px 10px;
   width: 20%;
 }
 .large-block-grid-5 > li:nth-of-type(5n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-6 > li {
   padding: 0 10px 10px;
   width: 16.66667%;
 }
 .large-block-grid-6 > li:nth-of-type(6n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-7 > li {
   padding: 0 10px 10px;
   width: 14.28571%;
 }
 .large-block-grid-7 > li:nth-of-type(7n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-8 > li {
   padding: 0 10px 10px;
   width: 12.5%;
 }
 .large-block-grid-8 > li:nth-of-type(8n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-9 > li {
   padding: 0 10px 10px;
   width: 11.11111%;
 }
 .large-block-grid-9 > li:nth-of-type(9n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-10 > li {
   padding: 0 10px 10px;
   width: 10%;
 }
 .large-block-grid-10 > li:nth-of-type(10n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-11 > li {
   padding: 0 10px 10px;
   width: 9.09091%;
 }
 .large-block-grid-11 > li:nth-of-type(11n+1) {
-  clear: both
+  clear: both;
 }
 .large-block-grid-12 > li {
   padding: 0 10px 10px;
   width: 8.33333%;
 }
 .large-block-grid-12 > li:nth-of-type(12n+1) {
-  clear: both
+  clear: both;
 }
 [class*=small-block-grid-] > li {
   clear: none!important;
@@ -857,7 +857,7 @@ p.lead {
   border-radius: 1000px;
 }
 .button {
-  display: inline-block
+  display: inline-block;
 }
 .section-container.accordion .section {
   padding-top: 0!important;
@@ -877,7 +877,7 @@ p.lead {
 }
 .section-container.vertical-nav section .content,
 .section-container.vertical-nav .section .content {
-  display: none
+  display: none;
 }
 .section-container.vertical-nav section.active .content,
 .section-container.vertical-nav .section.active .content {
@@ -911,11 +911,11 @@ p.lead {
 }
 .section-container.horizontal-nav section .title a,
 .section-container.horizontal-nav .section .title a {
-  width: 100%
+  width: 100%;
 }
 .section-container.horizontal-nav section .content,
 .section-container.horizontal-nav .section .content {
-  display: none
+  display: none;
 }
 .section-container.horizontal-nav section.active .content,
 .section-container.horizontal-nav .section.active .content {
@@ -982,16 +982,16 @@ p.lead {
   display: table;
 }
 .top-bar:after {
-  clear: both
+  clear: both;
 }
 .top-bar .toggle-topbar {
-  display: none
+  display: none;
 }
 .top-bar .title-area {
-  float: left
+  float: left;
 }
 .top-bar .name h1 a {
-  width: auto
+  width: auto;
 }
 .top-bar input,
 .top-bar .button {
@@ -1003,7 +1003,7 @@ p.lead {
   top: 8px;
 }
 .top-bar.expanded {
-  background: #111111
+  background: #111111;
 }
 .contain-to-grid .top-bar {
   margin: 0 auto;
@@ -1021,10 +1021,10 @@ p.lead {
   width: auto;
 }
 .top-bar-section ul li {
-  float: left
+  float: left;
 }
 .top-bar-section ul li .js-generated {
-  display: none
+  display: none;
 }
 .top-bar-section li a:not(.button) {
   background: #111111;
@@ -1032,7 +1032,7 @@ p.lead {
   padding: 0 15px;
 }
 .top-bar-section li a:not(.button):hover {
-  background: black
+  background: black;
 }
 .top-bar-section .has-dropdown > a {
   padding-right: 35px!important;
@@ -1047,14 +1047,14 @@ p.lead {
   width: 0;
 }
 .top-bar-section .has-dropdown.moved {
-  position: relative
+  position: relative;
 }
 .top-bar-section .has-dropdown.moved > .dropdown {
-  visibility: hidden
+  visibility: hidden;
 }
 .top-bar-section .has-dropdown:hover > .dropdown,
 .top-bar-section .has-dropdown:active > .dropdown {
-  visibility: visible
+  visibility: visible;
 }
 .top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
   border: none;
@@ -1104,10 +1104,10 @@ p.lead {
 }
 .touch .orbit-container .orbit-prev,
 .touch .orbit-container .orbit-next {
-  display: inherit
+  display: inherit;
 }
 .touch .orbit-bullets {
-  display: block
+  display: block;
 }
 .reveal-modal {
   padding: 1.875em;
@@ -1191,7 +1191,7 @@ p.lead {
   right: 0;
 }
 .clearing-main-right > span {
-  border-color: transparent transparent transparent white
+  border-color: transparent transparent transparent white;
 }
 .clearing-main-left.disabled,
 .clearing-main-right.disabled {
@@ -1356,7 +1356,7 @@ p.lead {
   background: white;
 }
 .switch:active {
-  background: transparent
+  background: transparent;
 }
 .switch.large {
   height: 44px;
@@ -1426,7 +1426,7 @@ p.lead {
   padding: 0 .5625em;
 }
 to {
-  position: relative
+  position: relative;
 }
 .tooltip > .nub {
   border-color: transparent transparent black;

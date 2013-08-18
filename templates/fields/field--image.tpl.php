@@ -1,8 +1,7 @@
 <?php
-
 /**
- * @file field-image.tpl.php
- *
+ * @file
+ * Default theme implementation for comments.
  *
  * Available variables:
  * - $items: An array of field values. Use render() to output them.
