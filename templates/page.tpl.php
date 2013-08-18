@@ -71,11 +71,9 @@
  *
  * @ingroup themeable
  */
-
-// Check if is frontpage to show frontpage template
 if ($is_front):
- include('page--front.tpl.php');
-  return;
+  include('page--front.tpl.php');
+return;
 endif;
 ?>
 

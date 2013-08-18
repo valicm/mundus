@@ -88,13 +88,15 @@ ul.tabs li {
   text-transform: uppercase;
   width: auto;
 }
-ul.tabs li, ul.tabs li {
+ul.tabs li,
+ul.tabs li {
   background: none;
   display: block;
   float: left;
   margin: 0;
 }
-ul.tabs li a, ul.tabs li a {
+ul.tabs li a,
+ul.tabs li a {
   color: #6f6f6f;
   display: block;
   font-size: 14px;
@@ -217,7 +219,6 @@ fieldset.vertical-tabs-pane fieldset legend {
   outline: none;
   text-decoration: underline;
 }
-.vertical-tabs ul.vertical-tabs-list li a:hover { }
 .vertical-tabs ul.vertical-tabs-list li.selected {
   background-color: #fff;
   border-right-width: 0 /* LTR */;

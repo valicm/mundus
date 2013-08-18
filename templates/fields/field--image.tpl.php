@@ -1,12 +1,8 @@
 <?php
 
 /**
- * @file field.tpl.php
- * Default template implementation to display the value of a field.
+ * @file field-image.tpl.php
  *
- * This file is not used and is here as a starting point
- * for customization only.
- * @see theme_field()
  *
  * Available variables:
  * - $items: An array of field values. Use render() to output them.
