@@ -3,118 +3,196 @@
 /**
  * Implements hook_preprocess_page()
  */
-function mundus_preprocess_page(&$variables) {
+function mundus_preprocess_page(&$variables, $hook) {
 
-  /** RENDER SEARCH FROM INSIDE PAGE TEMPLATE **/
+// RENDER SEARCH FROM INSIDE PAGE TEMPLATE 
   $mundus_search = drupal_render(drupal_get_form('search_form'));
   $variables['mundus_search'] = $mundus_search;
 
-}
-
-/**
-*Implements hook_preprocess_html()
-*/
-function mundus_preprocess_html(&$variables) {
-
-  /** Implements  adding Google fonts **/
-  if (theme_get_setting('google_font_name')&('google_font_body')) {
-
-    drupal_add_css('http://fonts.googleapis.com/css?family='.theme_get_setting('google_font_name').'|'.theme_get_setting('google_font_body').'',
-      array(
-        'type' => 'external'
-        ));
-
-    drupal_add_css('h1,h2,h3,h4,h5,h6 {font-family: '.theme_get_setting('google_font_name').'; }body {font-family: '.theme_get_setting('google_font_body').';}',
-      array(
-        'group' => CSS_THEME,
-        'type' => 'inline'
-        ));
-  }
-  else
-  {
-    drupal_add_css('http://fonts.googleapis.com/css?family=Merriweather+Sans|Ubuntu', array('type' => 'external'));
+// Using libraries to get foundation framework
+  if (module_exists('libraries') && $path = libraries_get_path('foundation') & $path_icons = libraries_get_path('foundation_icons_all')) {
+// If the libraries module exists:
+    $foundation_path = $path;
+    $foundation_icon_path = $path_icons;
   }
 
-  /** ADD FIXES FOR IE8 foundation grid **/
-  drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/foundation/foundation_ie8.css', array(
+// If it's just not available, display a message to the user:
+  else {
+    drupal_set_message(t('<h1>The Foundation framework and icons could not be found. 
+      <p></p>In order to use the Mundus theme, you must download the framework: 
+      <a href="http://foundation.zurb.com/download.php" target="_blank">Click here</a> 
+      and extract it to <em>sites/all/libraries/foundation</em><p></p>
+      Additional you need to download Foundation icons: 
+      <a href="http://zurb.com/playground/uploads/upload/upload/146/foundation_icons_all.zip" target="_blank">Click here</a>
+      and extract it to <em>sites/all/libraries/foundation_icons_all</em>
+      </h1>'), 'error');
+
+    // Adding some styling for error message to be visible and easy to understan for end user
+    drupal_add_css('
+      .error {position: fixed; left:5%;right: 0; top:5%; z-index: 500; width:90%; height:90%;}
+      .error a {color:#333333;}', array(
+      'group' => CSS_THEME,
+      'type' => 'inline'
+    ));
+  }
+
+
+// Adding Foundation css
+  drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all'));
+  drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all'));
+
+// Adding Foundation icons css
+  drupal_add_css($foundation_icon_path . '/foundation_icons_social/stylesheets/social_foundicons.css', array('
+    media' => 'all'
+  ));
+
+  drupal_add_css($foundation_icon_path . '/foundation_icons_general_enclosed/stylesheets/general_enclosed_foundicons.css', array(
+    'media' => 'all'
+  ));
+
+// Adding Foundation JS library at bottom of page
+  drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.topbar.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.cookie.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.forms.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.orbit.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.placeholder.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.reveal.js', array('scope' => 'footer'));
+
+// Invoke Foundation 
+  drupal_add_js('jQuery(document).foundation();', array(
+    'type' => 'inline',
+    'scope' => 'footer'
+  ));
+
+// Implements  adding Google fonts
+  if (theme_get_setting('google_font_name') & ('google_font_body')) {
+
+    drupal_add_css('http://fonts.googleapis.com/css?family=' . theme_get_setting('google_font_name') . '|' . theme_get_setting('google_font_body') . '', array(
+      'type' => 'external'
+    ));
+
+    drupal_add_css('h1,h2,h3,h4,h5,h6 {font-family: ' . theme_get_setting('google_font_name') . '; }body {font-family: ' . theme_get_setting('google_font_body') . ';}', array(
+      'group' => CSS_THEME,
+      'type' => 'inline'
+    ));
+  }
+  else {
+    drupal_add_css('http://fonts.googleapis.com/css?family=Merriweather+Sans|Ubuntu', array(
+      'type' => 'external'
+    ));
+  }
+
+// ADD FIXES FOR IE8 foundation grid
+  drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/foundation_mundus_ie8.css', array(
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lt IE 9',
       '!IE' => FALSE
-      ),
+    ),
     'preprocess' => TRUE
-    ));
+  ));
 
-  /** ADD FIXES FOR IE8 mundus style **/
+// ADD FIXES FOR IE8 mundus style
   drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/mundus_ie8.css', array(
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lt IE 9',
       '!IE' => FALSE
-      ),
+    ),
     'preprocess' => TRUE
-    ));
+  ));
 
-  /** ADD FIXES FOR IE7 mundus style **/
-  drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/foundation/foundation_mundus_ie7.css', array(
+// ADD FIXES FOR IE7 mundus style
+  drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/foundation_mundus_ie7.css', array(
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lt IE 8',
       '!IE' => FALSE
-      ),
+    ),
     'preprocess' => TRUE
-    ));
+  ));
 
-  /**  Load color style from theme settings **/
-  drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/style/'.theme_get_setting('mundus_style').'.css',
-    array(
+// Load color style from theme settings
+  drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/style/' . theme_get_setting('mundus_style') . '.css', array(
+    'group' => CSS_THEME,
+    'type' => 'file'
+  ));
+
+// Load color style from theme settings
+  drupal_add_js(drupal_get_path('theme', 'mundus') . '/css/style/' . theme_get_setting('mundus_style') . '.css', array(
+    'group' => CSS_THEME,
+    'type' => 'file'
+  ));
+
+// Adding font family for social icons if we use social icons 
+// (quick fix regarding not able to use directly modified files
+// inside drupal regarding licensing third party code 
+// (without this inline css, icons will use font from general icon set,
+//  and display them wrong)
+// Check if we use social profiles feature
+  if (theme_get_setting('social_profiles_top')) {
+    drupal_add_css(
+        '@font-face {
+           font-family: "SocialFoundicons";
+           src: url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.eot");
+           src: url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"), 
+                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.woff") format("woff"), 
+                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.ttf") format("truetype"), 
+                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.svg#SocialFoundicons") format("svg");
+           font-weight: normal;
+           font-style: normal;}', array(
       'group' => CSS_THEME,
-      'type' => 'file'
-      ));
+      'type' => 'inline'
+    ));
+  }
+  else {
+    // we are not doing anything in case when social profiles are not enabled
+  }
 }
 
-/** Add mobile viewport, force IE to chrome frame **/
+/** Add mobile viewport, force IE to chrome frame * */
 function mundus_html_head_alter(&$head_elements) {
-  // HTML5 charset declaration.
+// HTML5 charset declaration.
   $head_elements['system_meta_content_type']['#attributes'] = array(
     'charset' => 'utf-8',
-    );
+  );
 
-  // Optimize mobile viewport.
+// Optimize mobile viewport.
   $head_elements['mobile_viewport'] = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
     '#attributes' => array(
       'name' => 'viewport',
       'content' => 'width=device-width',
-      ),
-    );
+    ),
+  );
 
-  // Force IE to use Chrome Frame if installed.
+// Force IE to use Chrome Frame if installed.
   $head_elements['chrome_frame'] = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
     '#attributes' => array(
       'content' => 'ie=edge, chrome=1',
       'http-equiv' => 'x-ua-compatible',
-      ),
-    );
+    ),
+  );
 
-  // Remove image toolbar in IE.
+// Remove image toolbar in IE.
   $head_elements['ie_image_toolbar'] = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
     '#attributes' => array(
       'http-equiv' => 'ImageToolbar',
       'content' => 'false',
-      ),
-    );
+    ),
+  );
 }
 
 /**
  * Remove default css files from Drupal.
  */
-
 function mundus_css_alter(&$css) {
 
   $remove = array(
@@ -145,29 +223,28 @@ function mundus_css_alter(&$css) {
     'modules/user/user.css',
     'modules/user/user-rtl.css',
     'sites/all/modules/ctools/css/ctools.css',
-    );
-foreach ($remove as $value) {
-  unset($css[$value]);
-}
+  );
+  foreach ($remove as $value) {
+    unset($css[$value]);
+  }
 }
 
 /**
  * Style main menu / show submenu as dropdown
  */
-
 function mundus_links__system_main_menu($vars) {
-  // Get all the main menu links
+// Get all the main menu links
   $menu_links = menu_tree_output(menu_tree_all_data('main-menu'));
 
-  // Initialize some variables to prevent errors
+// Initialize some variables to prevent errors
   $output = '';
   $sub_menu = '';
 
   foreach ($menu_links as $key => $link) {
-    // Add special class needed for Foundation dropdown menu to work
+// Add special class needed for Foundation dropdown menu to work
     !empty($link['#below']) ? $link['#attributes']['class'][] = 'has-dropdown' : '';
 
-    // Render top level and make sure we have an actual link
+// Render top level and make sure we have an actual link
     if (!empty($link['#href'])) {
       $output .= '<li' . drupal_attributes($link['#attributes']) . '>' . l($link['#title'], $link['#href']);
       // Get sub navigation links if they exist
@@ -176,13 +253,13 @@ function mundus_links__system_main_menu($vars) {
           $sub_menu .= '<li class="submenu">' . l($sub_link['#title'], $sub_link['#href']) . '</li>';
         }
       }
-      $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
+      $output .=!empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
 
-      // Reset dropdown to prevent duplicates
+// Reset dropdown to prevent duplicates
       unset($sub_menu);
       $sub_menu = '';
 
-      $output .=  '</li>';
+      $output .= '</li>';
     }
   }
   return '<ul class="left">' . $output . '</ul>';
@@ -191,12 +268,10 @@ function mundus_links__system_main_menu($vars) {
 /**
  * Remove filter tips from comment form.
  */
-
 function mundus_form_comment_form_alter(&$form, &$form_state) {
 
   $form['comment_body']['#after_build'][] = 'mundus_customize_comment_form';
   $form['author']['homepage']['#access'] = FALSE;
-
 }
 
 function mundus_customize_comment_form(&$form) {
@@ -205,16 +280,16 @@ function mundus_customize_comment_form(&$form) {
 }
 
 /**
-* Adding separate template for teaser / adding block region to node template
-*/
-function mundus_preprocess_node(&$variables){
+ * Adding separate template for teaser / adding block region to node template
+ */
+function mundus_preprocess_node(&$variables) {
 
-  //If the node is a teaser
-  if($variables['teaser']){
-    //Allow us to use a different template
+//If the node is a teaser
+  if ($variables['teaser']) {
+//Allow us to use a different template
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '_teaser';
   }
-  //Adding block region to node.tpl.php
+//Adding block region to node.tpl.php
   if ($blocks = block_get_blocks_by_region('node_block')) {
     $variables['node_block'] = $blocks;
   }
@@ -225,24 +300,23 @@ function mundus_preprocess_node(&$variables){
  */
 function mundus_process_field(&$vars) {
   $element = $vars['element'];
-  // Field type image
+// Field type image
   if ($element['#field_type'] == 'image') {
-    // Reduce number of images in teaser view mode to single image
+// Reduce number of images in teaser view mode to single image
     if ($element['#view_mode'] == 'teaser') {
       $item = reset($vars['items']);
       $vars['items'] = array($item);
     }
   }
-
 }
 
 /**
-* Label theming
-*/
+ * Label theming
+ */
 function mundus_field($variables) {
   $output = '';
 
-  // Render the label, if it's not hidden.
+// Render the label, if it's not hidden.
   if (!$variables['label_hidden']) {
     $output .= '<div ' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
   }
@@ -251,24 +325,26 @@ function mundus_field($variables) {
     $output .= drupal_render($item);
   }
 
-  // Render the top-level DIV.
+// Render the top-level DIV.
   $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
 
   return $output;
 }
 
-
+/**
+ * Button styling
+ */
 function mundus_form_alter(&$form, &$form_state) {
 
-  // Button style submit
+// Button style submit
   if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
     $form['actions']['submit']['#attributes'] = array('class' => array('secondary', 'small button', 'radius'));
   }
-  // Button style preview
+// Button style preview
   if (!empty($form['actions']) && !empty($form['actions']['preview'])) {
     $form['actions']['preview']['#attributes'] = array('class' => array('secondary', 'small button', 'radius'));
   }
-  // Button style delete
+// Button style delete
   if (!empty($form['actions']) && !empty($form['actions']['delete'])) {
     $form['actions']['delete']['#attributes'] = array('class' => array('secondary', 'small button', 'radius'));
   }
@@ -281,8 +357,8 @@ function mundus_breadcrumb($vars) {
   $breadcrumb = $vars['breadcrumb'];
 
   if (!empty($breadcrumb)) {
-    // Provide a navigational heading to give context for breadcrumb links to
-    // screen-reader users. Make the heading invisible with .element-invisible.
+// Provide a navigational heading to give context for breadcrumb links to
+// screen-reader users. Make the heading invisible with .element-invisible.
     $breadcrumbs = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
 
     $breadcrumbs .= '<ul class="breadcrumbs">';
@@ -292,24 +368,23 @@ function mundus_breadcrumb($vars) {
     }
 
     $title = strip_tags(drupal_get_title());
-    $breadcrumbs .= '<li class="current"><a href="#">' . $title. '</a></li>';
+    $breadcrumbs .= '<li class="current"><a href="#">' . $title . '</a></li>';
     $breadcrumbs .= '</ul>';
 
     return $breadcrumbs;
   }
 }
 
-/** FUNCTION FOR USING SLIDESHOW ON VIEWS **/
-
+/** FUNCTION FOR USING SLIDESHOW ON VIEWS * */
 function mundus_preprocess_views_view_list(&$vars) {
-  $handler  = $vars['view']->style_plugin;
+  $handler = $vars['view']->style_plugin;
 
   $class = explode(' ', $handler->options['class']);
   $class = array_map('views_clean_css_identifier', $class);
 
   $vars['class'] = implode(' ', $class);
 
-    if ($vars['class'] == 'data-orbit') {
+  if ($vars['class'] == 'data-orbit') {
     $vars['list_type_prefix'] = '<' . $handler->options['type'] . ' ' . $vars['class'] . '>';
   }
 }

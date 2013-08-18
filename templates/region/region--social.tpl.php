@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a region.
@@ -30,25 +29,45 @@
 ?>
 
 <ul id="social-profile" class="inline-list">
- <?php if (theme_get_setting('twitter_username')): ?>
- <li><a href="http://www.twitter.com/<?php echo theme_get_setting('twitter_username'); ?>" target="_blank" rel="me"><i class="social-foundicon-twitter"></i></a></li>
-<?php endif; ?>
+  <?php if (theme_get_setting('twitter_username')): ?>
+    <li>
+      <a href="http://www.twitter.com/<?php echo theme_get_setting('twitter_username'); ?>" target="_blank" rel="me">
+        <i class="foundicon-social-twitter"></i>
+      </a>
+    </li>
+  <?php endif; ?>
 
-<?php if (theme_get_setting('facebook_username')): ?>
- <li><a href="http://www.facebook.com/<?php echo theme_get_setting('facebook_username'); ?>" target="_blank" rel="me"><i class="social-foundicon-facebook"></i></a></li>
-<?php endif;?>
+  <?php if (theme_get_setting('facebook_username')): ?>
+    <li>
+      <a href="http://www.facebook.com/<?php echo theme_get_setting('facebook_username'); ?>" target="_blank" rel="me">
+        <i class="foundicon-social-facebook"></i>
+      </a>
+    </li>
+  <?php endif; ?>
 
-<?php if (theme_get_setting('linkedin_username')): ?>
- <li><a href="http://www.linkedin.com/in/<?php echo theme_get_setting('linkedin_username'); ?>" target="_blank" rel="me"><i class="social-foundicon-linkedin"></i></a></li>
-<?php endif;?>
+  <?php if (theme_get_setting('linkedin_username')): ?>
+    <li>
+      <a href="http://www.linkedin.com/in/<?php echo theme_get_setting('linkedin_username'); ?>" target="_blank" rel="me">
+        <i class="foundicon-social-linkedin"></i>
+      </a>
+    </li>
+  <?php endif; ?>
 
-<?php if (theme_get_setting('google_plus_username')): ?>
- <li><a href="http://plus.google.com/<?php echo theme_get_setting('google_plus_username'); ?>" target="_blank" rel="me"><i class="social-foundicon-google-plus"></i></a></li>
-<?php endif;?>
+  <?php if (theme_get_setting('google_plus_username')): ?>
+    <li>
+      <a href="http://plus.google.com/<?php echo theme_get_setting('google_plus_username'); ?>" target="_blank" rel="me">
+        <i class="foundicon-social-google-plus"></i>
+      </a>
+    </li>
+  <?php endif; ?>
 
-<?php if (theme_get_setting('rss_url')): ?>
- <li><a href="<?php echo theme_get_setting('rss_url'); ?>"><i class="social-foundicon-rss"></i></a></li>
-<?php endif;?>
+  <?php if (theme_get_setting('rss_url')): ?>
+    <li>
+      <a href="<?php echo theme_get_setting('rss_url'); ?>">
+        <i class="foundicon-social-rss"></i>
+      </a>
+    </li>
+  <?php endif; ?>
 </ul>
 
 <?php if ($content): ?>

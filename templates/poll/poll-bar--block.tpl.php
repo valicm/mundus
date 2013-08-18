@@ -18,7 +18,7 @@
 ?>
 
 <span class="text"><?php print $title; ?></span><span class="percent">
-<?php print $percentage; ?>%
+  <?php print $percentage; ?>%
 </span>
 <div class="radius progress">
   <div style="width: <?php print $percentage; ?>%;" class="meter">

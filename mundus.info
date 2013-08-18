@@ -3,25 +3,9 @@ description = Lightweight, clean and elegant responsive theme built on top of Fo
 core = 7.x
 screenshot = screenshot.png
 
-; Stylesheets  -----------------------------------------------------------
-stylesheets[all][] = css/foundation/foundation.css
-stylesheets[all][] = css/foundation/social_foundicons.css
-stylesheets[all][] = css/foundation/general_enclosed_foundicons.css
-stylesheets[all][] = css/foundation/normalize.css
 stylesheets[all][] = css/drupal.css
 stylesheets[all][] = css/mundus.css
 
-; Javascripts  -----------------------------------------------------------
-scripts[] = js/vendor/custom.modernizr.js
-scripts[] = js/foundation/foundation.js
-scripts[] = js/foundation/foundation.topbar.js
-scripts[] = js/foundation/foundation.cookie.js
-scripts[] = js/foundation/foundation.forms.js
-scripts[] = js/foundation/foundation.orbit.js
-scripts[] = js/foundation/foundation.placeholder.js
-scripts[] = js/foundation/foundation.reveal.js
-
-; Regions  ---------------------------------------------------------------
 regions[hidden] = Hidden
 regions[header] = Header
 regions[help] = Help
@@ -41,7 +25,6 @@ regions[node_block] = Node block region
 regions[social] = Social
 regions[login_region] = Login region
 
-; Settings  --------------------------------------------------------------
 settings[google_font_name] = Merriweather+Sans
 settings[google_font_body] = Ubuntu
 settings[mundus_style] = red

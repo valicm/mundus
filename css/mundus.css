@@ -79,7 +79,7 @@ ul#quick-links {float:right; padding-top: 5px; list-style-type: none; width:100%
 
 /** FIX button on login form **/
 @media only screen and (min-width: 58.75em) {
-#login-mundus input.button.small{ padding-top: 0; }
+  #login-mundus input.button.small{ padding-top: 0; }
 }
 
 @media only screen and (max-width: 58.75em)  {
@@ -344,4 +344,45 @@ button#cboxNext, button#cboxPrevious, button#cboxClose, button#cboxSlideshow {
   /** remove breadcrumb active title from mobile, too little space for everything **/
   .breadcrumbs li.current {display: none;}
 
+}
+
+/** SOCIAL ICONS - regarding conflict with general icons, it's needed to make 
+separate class for several icons **/
+/* global foundicon styles */
+
+[class*="foundicon-social-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+[class*="foundicon-social-"]:before {
+  font-family: "SocialFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+.foundicon-social-rss:before {
+  content: "\f002";
+}
+
+.foundicon-social-facebook:before {
+  content: "\f003";
+}
+
+.foundicon-social-twitter:before {
+  content: "\f004";
+}  
+.foundicon-social-linkedin:before {
+  content: "\f008";
+}
+
+.foundicon-social-google-plus:before {
+  content: "\f00d";
 }
