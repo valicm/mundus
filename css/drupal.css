@@ -149,8 +149,8 @@ ul.tabs li.active a {
     clear: both;
   }
   .page-user ul.tabs li {
-    clear:both;
-    width:100%;
+    clear: both;
+    width: 100%;
   }
 }
 
@@ -247,8 +247,8 @@ fieldset.vertical-tabs-pane fieldset legend {
 * html .vertical-tabs .form-type-textfield,
 * html .vertical-tabs .form-textarea-wrapper {
   padding: 10px;
-   width: 95% /* IE6 */;
- }
+  width: 95% /* IE6 */;
+}
 
 .vertical-tabs-panes input,
 .vertical-tabs-panes label {
@@ -261,7 +261,8 @@ div#edit-actions {
 
 
 /**  DRUPAL BUTTONS, FORMS, TABLE, LISTS **/
-button, input {
+button,
+input {
   background: #f2f2f2;
   border: solid 1px #d9d9d9;
   border-radius: 2px;
@@ -310,7 +311,7 @@ input[type="checkbox"] {
 }
 
 .form-type-radio label,
-.form-type-checkbox label  {
+.form-type-checkbox label {
   color: #4d4d4d;
   cursor: pointer;
   display: block;
@@ -320,13 +321,13 @@ input[type="checkbox"] {
   padding: 2px;
 }
 
-.form-type-checkbox label  {
+.form-type-checkbox label {
   padding: 10px;
 }
 
 
 input[type="radio"],
-input[type="checkbox"]  {
+input[type="checkbox"] {
   background: white;
   border: solid 1px #cccccc;
   display: inline-block;
@@ -369,7 +370,9 @@ select a {
   white-space: nowrap;
 }
 
-select a:focus { outline: none; }
+select a:focus {
+  outline: none;
+}
 
 div.description {
   clear: both;
@@ -400,7 +403,6 @@ ul.links.inline li {
   list-style-type: none;
   padding-right: 10px;
 }
-
 html.js input.form-autocomplete {
   background-position: 100% 10px ;
   background-repeat: no-repeat;
@@ -410,12 +412,12 @@ html.js input.throbbing {
   background-repeat: no-repeat;
 }
 
-.field-type-taxonomy-term-reference  {
+.field-type-taxonomy-term-reference {
   clear: both;
   margin-top: 10px;
 }
 
-.field-label-inline  {
+.field-label-inline {
   margin-top: 10px;
   margin-bottom: 10px;
 }

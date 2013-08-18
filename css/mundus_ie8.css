@@ -1,5 +1,5 @@
 .region-sidebar-first {
-  margin-top: 30px
+  margin-top: 30px;
 }
 .node-teaser header {
   position: absolute;
@@ -16,7 +16,7 @@
 }
 .node-poll header,
 .node-blog header {
-  position: relative
+  position: relative;
 }
 .node-poll header h1,
 .node-blog header h1 {
@@ -30,20 +30,20 @@
   color: #333333;
 }
 .orbit-container .orbit-slides-container > * h1.orbit-caption {
-  font-size: 2.2em
+  font-size: 2.2em;
 }
 ul#social-profile.inline-list > li {
   font-size: 1.25em;
   padding-top: 10px;
 }
 ul#social-profile.inline-list > li a:hover {
-  color: #000000
+  color: #000000;
 }
 ul#social-profile.inline-list {
-  padding-top: 0
+  padding-top: 0;
 }
 #login-mundus input.button.small {
-  padding-top: 0
+  padding-top: 0;
 }
 .top-bar-section #main-menu li,
 .top-bar-section #main-menu li a {
@@ -51,7 +51,7 @@ ul#social-profile.inline-list {
   font-weight: normal;
 }
 .top-bar-section #main-menu li a:hover {
-  color: #ad0505
+  color: #ad0505;
 }
 .top-bar-section #main-menu li.leaf a.active,
 .top-bar-section #main-menu li.expanded a.active {
@@ -119,5 +119,5 @@ ol li img {
   height: none;
 }
 .orbit-caption {
-  opacity: 0.2
+  opacity: 0.2;
 }
