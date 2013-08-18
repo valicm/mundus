@@ -1,21 +1,51 @@
+/**
+ * @file
+ * Drupal styling
+ *
+ */
+
 /** STYLES / FONTS **/
-body { font-family: 'Ubuntu'; }
-h1,h2,h3,h4,h5,h6, .top-bar-section ul li { font-family: 'Merriweather Sans'; }
+body {
+  font-family: 'Ubuntu';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.top-bar-section ul li {
+  font-family: 'Merriweather Sans';
+}
+
 /*h1, .top-bar .name h1 { font-size: 2.2em; }*/
 
 
 @media only screen and (max-width: 48em) {
-  h1 { font-size: 1.375em; }
+  h1 {
+    font-size: 1.375em;
+  }
 
-  h2 { font-size: 1.25em; }
+  h2 {
+    font-size: 1.25em;
+  }
 
-  h3 { font-size: 1.125em; }
+  h3 {
+    font-size: 1.125em;
+  }
 
-  h4 { font-size: 1em; }
+  h4 {
+    font-size: 1em;
+  }
 
-  h5 { font-size: 1em; }
+  h5 {
+    font-size: 1em;
+  }
 
-  h6 { font-size: 0.875em; }
+  h6 {
+    font-size: 0.875em;
+  }
 }
 
 /** DEFAULT **/
@@ -28,8 +58,12 @@ h1,h2,h3,h4,h5,h6, .top-bar-section ul li { font-family: 'Merriweather Sans'; }
 }
 
 /** LINKS STYLE **/
-a { color: #ad0505; }
-a:hover { color: #333333; }
+a {
+  color: #ad0505;
+}
+a:hover {
+  color: #333333;
+}
 
 
 /* DRUPAL TABS STYLE */
@@ -68,9 +102,18 @@ ul.tabs li a, ul.tabs li a {
   line-height: 40px;
   padding: 0px 23.8px;
 }
-ul.tabs li a:focus, ul.tabs li a:focus { color: #2ba6cb; font-weight: bold; }
-ul.tabs li.active, ul.tabs li.active { border-top: 3px solid #ad0505; margin-top: -3px; }
-ul.tabs li.active a, ul.tabs li.active a {
+ul.tabs li a:focus,
+ul.tabs li a:focus {
+  color: #2ba6cb;
+  font-weight: bold;
+}
+ul.tabs li.active,
+ul.tabs li.active {
+  border-top: 3px solid #ad0505;
+  margin-top: -3px;
+}
+ul.tabs li.active a,
+ul.tabs li.active a {
   background: #fff;
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
@@ -100,16 +143,33 @@ ul.tabs li.active a, ul.tabs li.active a {
   **/
 
 @media only screen and (max-width: 35em) {
-  form {clear: both;}
-  .page-user ul.tabs li {clear:both; width:100%;}
+  form {
+    clear: both;
+  }
+  .page-user ul.tabs li {
+    clear:both;
+    width:100%;
+  }
 }
 
-div.vertical-tabs.clearfix { clear: both; margin-top: 15px; }
-ul.vertical-tabs-list li a:active { border: none; }
-ul.vertical-tabs-list { border-bottom: 1px solid #e6e6e6; height: auto; }
+div.vertical-tabs.clearfix {
+  clear: both;
+  margin-top: 15px;
+}
+ul.vertical-tabs-list li a:active {
+  border: none;
+}
+ul.vertical-tabs-list {
+  border-bottom: 1px solid #e6e6e6;
+  height: auto;
+}
 
 
-div.vertical-tabs { border: 1px solid #ccc; margin: 1em 0 1em 15em /* LTR */; position: relative /* IE6/7 */; }
+div.vertical-tabs {
+  border: 1px solid #ccc;
+  margin: 1em 0 1em 15em /* LTR */;
+  position: relative /* IE6/7 */;
+}
 .vertical-tabs ul.vertical-tabs-list {
   border-top: 1px solid #ccc;
   float: left; /* LTR */
@@ -120,9 +180,17 @@ div.vertical-tabs { border: 1px solid #ccc; margin: 1em 0 1em 15em /* LTR */; po
   position: relative; /* IE6 */
   width: 15em;
 }
-.vertical-tabs fieldset.vertical-tabs-pane { border: 0; margin: 0 !important; padding: 1em; }
-fieldset.vertical-tabs-pane legend { display: none; }
-fieldset.vertical-tabs-pane fieldset legend { display: block; }
+.vertical-tabs fieldset.vertical-tabs-pane {
+  border: 0;
+  margin: 0 !important;
+  padding: 1em;
+}
+fieldset.vertical-tabs-pane legend {
+  display: none;
+}
+fieldset.vertical-tabs-pane fieldset legend {
+  display: block;
+}
 
 /* Layout of each tab */
 .vertical-tabs ul.vertical-tabs-list li {
@@ -139,16 +207,35 @@ fieldset.vertical-tabs-pane fieldset legend { display: block; }
   padding: 0.5em 0.6em;
   text-decoration: none;
 }
-.vertical-tabs ul.vertical-tabs-list li a:focus { border: 0; outline: none; }
+.vertical-tabs ul.vertical-tabs-list li a:focus {
+  border: 0;
+  outline: none;
+}
 .vertical-tabs ul.vertical-tabs-list li a:focus strong,
 .vertical-tabs ul.vertical-tabs-list li a:active strong,
-.vertical-tabs ul.vertical-tabs-list li a:hover strong { outline: none; text-decoration: underline; }
+.vertical-tabs ul.vertical-tabs-list li a:hover strong {
+  outline: none;
+  text-decoration: underline;
+}
 .vertical-tabs ul.vertical-tabs-list li a:hover { }
-.vertical-tabs ul.vertical-tabs-list li.selected { background-color: #fff; border-right-width: 0 /* LTR */; outline: none; }
-.vertical-tabs ul.vertical-tabs-list li.selected:focus { outline: none; }
-.vertical-tabs ul.vertical-tabs-list .selected strong { color: #000; }
-.vertical-tabs ul.vertical-tabs-list .summary { display: block; }
-.vertical-tabs ul.vertical-tabs ul.vertical-tabs-list .summary { line-height: normal; margin-bottom: 0; }
+.vertical-tabs ul.vertical-tabs-list li.selected {
+  background-color: #fff;
+  border-right-width: 0 /* LTR */;
+  outline: none;
+}
+.vertical-tabs ul.vertical-tabs-list li.selected:focus {
+  outline: none;
+}
+.vertical-tabs ul.vertical-tabs-list .selected strong {
+  color: #000;
+}
+.vertical-tabs ul.vertical-tabs-list .summary {
+  display: block;
+}
+.vertical-tabs ul.vertical-tabs ul.vertical-tabs-list .summary {
+  line-height: normal;
+  margin-bottom: 0;
+}
 
 .vertical-tabs .form-type-textfield input {
   -webkit-box-sizing: border-box;
@@ -157,12 +244,19 @@ fieldset.vertical-tabs-pane fieldset legend { display: block; }
   width: 100%;
 }
 * html .vertical-tabs .form-type-textfield,
-* html .vertical-tabs .form-textarea-wrapper { padding: 10px; width: 95% /* IE6 */; }
+* html .vertical-tabs .form-textarea-wrapper {
+  padding: 10px;
+   width: 95% /* IE6 */;
+ }
 
 .vertical-tabs-panes input,
-.vertical-tabs-panes label { display: inline; }
+.vertical-tabs-panes label {
+  display: inline;
+}
 
-div#edit-actions { clear: both; }
+div#edit-actions {
+  clear: both;
+}
 
 
 /**  DRUPAL BUTTONS, FORMS, TABLE, LISTS **/
@@ -175,13 +269,21 @@ button, input {
   padding: 8px 35px;
 }
 
-input.form-file { padding: 5px 15px; }
+input.form-file {
+  padding: 5px 15px;
+}
 
-input.button.form-submit { margin: 10px 10px 10px 0; }
+input.button.form-submit {
+  margin: 10px 10px 10px 0;
+}
 
-fieldset { margin: 10px 0; }
+fieldset {
+  margin: 10px 0;
+}
 
-html.js fieldset.collapsed { bordeR: 1px solid #c0c0c0; }
+html.js fieldset.collapsed {
+  border: 1px solid #c0c0c0;
+}
 
 label {
   color: #4d4d4d;
@@ -193,12 +295,18 @@ label {
 }
 
 .form-radios,
-.form-checkboxes { margin-bottom: 10px; }
+.form-checkboxes {
+  margin-bottom: 10px;
+}
 .form-type-checkbox,
-.form-type-radio { clear: both; }
+.form-type-radio {
+  clear: both;
+}
 .form-type-radio label,
 input[type="radio"],
-input[type="checkbox"] { float: left; }
+input[type="checkbox"] {
+  float: left;
+}
 
 .form-type-radio label,
 .form-type-checkbox label  {
@@ -211,7 +319,9 @@ input[type="checkbox"] { float: left; }
   padding: 2px;
 }
 
-.form-type-checkbox label  { padding: 10px; }
+.form-type-checkbox label  {
+  padding: 10px;
+}
 
 
 input[type="radio"],
@@ -267,29 +377,66 @@ div.description {
   margin-top: 10px;
 }
 
-textarea { height: auto; }
+textarea {
+  height: auto;
+}
 
-table { width: 100%; }
+table {
+  width: 100%;
+}
 
-ul { margin-bottom: 0; margin-left: 2em; }
+ul {
+  margin-bottom: 0;
+  margin-left: 2em;
+}
 
 ul.links.inline,
-ul.tabs { margin-left: 0; }
-ul.links.inline li { float: left; list-style-type: none; padding-right: 10px; }
+ul.tabs {
+  margin-left: 0;
+}
+ul.links.inline li {
+  float: left;
+  list-style-type: none;
+  padding-right: 10px;
+}
 
-html.js input.form-autocomplete { background-position: 100% 10px ; background-repeat: no-repeat; }
-html.js input.throbbing { background-position: 100% -26px; background-repeat: no-repeat; }
+html.js input.form-autocomplete {
+  background-position: 100% 10px ;
+  background-repeat: no-repeat;
+}
+html.js input.throbbing {
+  background-position: 100% -26px;
+  background-repeat: no-repeat;
+}
 
-.field-type-taxonomy-term-reference  { clear: both; margin-top: 10px; }
+.field-type-taxonomy-term-reference  {
+  clear: both;
+  margin-top: 10px;
+}
 
-.field-label-inline  { margin-top: 10px; margin-bottom: 10px; }
+.field-label-inline  {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-.field-label-inline div { float: left; font-weight: bold; }
-.field-label-inline span { float: left; }
-.field-label-inline img { float: left; }
-.field-label-above div { font-weight: bold; padding: 5px 0; }
+.field-label-inline div {
+  float: left;
+  font-weight: bold;
+}
+.field-label-inline span {
+  float: left;
+}
+.field-label-inline img {
+  float: left;
+}
+.field-label-above div {
+  font-weight: bold;
+  padding: 5px 0;
+}
 
-.field-type-taxonomy-term-reference a { padding-right: 5px; }
+.field-type-taxonomy-term-reference a {
+  padding-right: 5px;
+}
 
 /** DRUPAL MESSAGE **/
 .messages {
@@ -307,9 +454,16 @@ html.js input.throbbing { background-position: 100% -26px; background-repeat: no
   position: relative;
 }
 
-div.messages.error { background: #ad0505; border-color: #970b0e; color: #ffffff; }
+div.messages.error {
+  background: #ad0505;
+  border-color: #970b0e;
+  color: #ffffff;
+}
+
 /** PAGINATION - css for Drupal pager instead of using custom theme function to get right class according to foundation docs **/
-.content .item-list { padding-bottom: 20px; }
+.content .item-list {
+  padding-bottom: 20px;
+}
 
 ul.pager {
   display: block;
@@ -328,11 +482,23 @@ ul.pager li {
   height: 1.5em;
   margin-left: 0.3125em;
 }
-ul.pager li a { color: #999999; display: block; padding: 0.0625em 0.4375em 0.0625em; }
+ul.pager li a {
+  color: #999999;
+  display: block;
+  padding: 0.0625em 0.4375em 0.0625em;
+}
 ul.pager li:hover a,
-ul.pager li a:focus { background: #e6e6e6; }
-ul.pager li.unavailable a { color: #999999; cursor: default; }
-ul.pager li.unavailable:hover a, .pager li.unavailable a:focus { background: transparent; }
+ul.pager li a:focus {
+  background: #e6e6e6;
+}
+ul.pager li.unavailable a {
+  color: #999999;
+  cursor: default;
+}
+ul.pager li.unavailable:hover a,
+.pager li.unavailable a:focus {
+  background: transparent;
+}
 ul.pager li.pager-current {
   background: #ad0505;
   color: white;
@@ -340,22 +506,39 @@ ul.pager li.pager-current {
   font-weight: bold;
   padding: 0.0625em 0.4375em 0.0625em;
 }
-ul.pager li.pager-current a:hover, .pager li.current a:focus { background: #ad0505; }
+ul.pager li.pager-current a:hover,
+.pager li.current a:focus {
+  background: #ad0505;
+}
 
 
 /** DRUPAL ICONS REPLACEMENT **/
-a.tabledrag-handle .handle { height: 25px; width: 20px; }
+a.tabledrag-handle .handle {
+  height: 25px;
+  width: 20px;
+}
 
 /** FOUNDATION VS. DRUPAL FIXES **/
-.orbit-container ul { margin: 0; }
+.orbit-container ul {
+  margin: 0;
+}
 
 /** FEED ITEM **/
-.feed-item { margin-bottom: 25px; margin-top: 10px; }
+.feed-item {
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
 
 /** RECENT ITEMS **/
-#block-node-recent table { border: 0; }
-#block-node-recent .node-author { float: right; }
-#block-node-recent .node-author a { color: #333333; }
+#block-node-recent table {
+  border: 0;
+}
+#block-node-recent .node-author {
+  float: right;
+}
+#block-node-recent .node-author a {
+  color: #333333;
+}
 
 /** FOOTER **/
 footer#footer {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Provides setting for Mundus theme.
@@ -10,7 +11,7 @@
 
 
 /**
- * Admin settings for theme using theme_form_system_theme_settings_alter()
+ * Admin settings for theme using themename_form_system_theme_settings_alter()
  */
 function mundus_form_system_theme_settings_alter(&$form, $form_state) {
   $form['google_font_choice'] = array(
@@ -45,7 +46,7 @@ function mundus_form_system_theme_settings_alter(&$form, $form_state) {
       'dark_spring_green' => t('Dark spring green'),
       'fandango' => t('Fandango'),
       'rust' => t('Rust'),
-      'amaranth' => t('Amaranth').
+      'amaranth' => t('Amaranth')
     ),
   );
   $form['mundus_login'] = array(

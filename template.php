@@ -2,7 +2,8 @@
 
 /**
  * @file
- * Provides preprocess logic and other utilities for Mundus and Foundation integration.
+ * Provides preprocess logic and other utilities for
+ * Mundus and Foundation integration.
  *
  * @todo
  *
@@ -12,7 +13,7 @@
 
 
 /**
- * Implements hook_preprocess_page()
+ * Implements themename_preprocess_page()
  */
 function mundus_preprocess_page(&$variables, $hook) {
 
@@ -386,7 +387,9 @@ function mundus_breadcrumb($vars) {
   }
 }
 
-/** FUNCTION FOR USING SLIDESHOW ON VIEWS * */
+/**
+ * FUNCTION FOR USING SLIDESHOW ON VIEWS
+ */
 function mundus_preprocess_views_view_list(&$vars) {
   $handler = $vars['view']->style_plugin;
 
