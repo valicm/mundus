@@ -71,10 +71,6 @@
  *
  * @ingroup themeable
  */
-if ($is_front):
-  include_once ('page--front.tpl.php');
-return;
-endif;
 ?>
 
 <!-- start from drupal body -->

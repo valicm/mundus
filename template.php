@@ -41,7 +41,8 @@ function mundus_preprocess_page(&$variables, $hook) {
       .error a {color:#333333;}', array(
         'group' => CSS_THEME,
         'type' => 'inline',
-    ));
+      )
+    );
   }
 
   // Adding Foundation css:
@@ -146,9 +147,10 @@ function mundus_preprocess_page(&$variables, $hook) {
                 url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.svg#SocialFoundicons") format("svg");
            font-weight: normal;
            font-style: normal;}', array(
-            'group' => CSS_THEME,
-            'type' => 'inline',
-          ));
+             'group' => CSS_THEME,
+             'type' => 'inline',
+           )
+        );
   }
   else {
     // We are not doing anything in case when social profiles are not enabled!
@@ -351,7 +353,8 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-    ));
+      )
+    );
   }
   // Button style preview:
   if (!empty($form['actions']) && !empty($form['actions']['preview'])) {
@@ -360,7 +363,8 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-    ));
+      )
+    );
   }
   // Button style delete:
   if (!empty($form['actions']) && !empty($form['actions']['delete'])) {
@@ -369,7 +373,8 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-    ));
+      )
+    );
   }
 }
 
