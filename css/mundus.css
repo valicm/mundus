@@ -79,24 +79,20 @@
 
 /** SOCIAL BLOK **/
 #social-mundus ul#social-profile {
-margin-bottom:15px;
+  margin-bottom: 15px
 }
-
 ul#social-profile.inline-list > li {
-font-size:1.25em;
-padding-top:0;
+  font-size: 1.25em;
+  padding-top: 0;
 }
-
 #social-mundus ul#social-profile.inline-list > li {
-font-size:2em;
+  font-size: 2em
 }
-
 ul#social-profile.inline-list > li a:hover {
-color:#111111;
+  color: #111111
 }
-
 footer ul#social-profile {
-float:right;
+  float: right
 }
 
 @media only screen and (max-width: 48em)  {
@@ -107,26 +103,23 @@ float:right;
 
 /** SEARCH & LOGIN BOX **/
 ul#quick-links {
-float:right;
-padding-top:5px;
-list-style-type:none;
-width:100%;
+  float: right;
+  padding-top: 5px;
+  list-style-type: none;
+  width: 100%;
 }
-
 .top-bar ul#quick-links li.search,
 .top-bar ul#quick-links li.login,
 .top-bar ul#quick-links li.social {
-display:inline;
-font-size:20px;
+  display: inline;
+  font-size: 20px;
 }
-
 .top-bar ul#quick-links li.social {
-margin-left:10px;
-margin-right:10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-
 .reveal-modal {
-z-index:999;
+  z-index: 999
 }
 
 /** FIX button on login form **/
@@ -139,32 +132,27 @@ z-index:999;
 @media only screen and (max-width: 58.75em)  {
   /** SOCIAL PROFILE MENU **/
   ul#social-profile.inline-list {
-    padding-top:10px;
+    padding-top: 10px
   }
-
-ul#quick-links {
-float:left;
-padding-top:10px;
-margin-left:0;
-}
-
-.top-bar ul#quick-links li.search,
-.top-bar ul#quick-links li.login,
-.top-bar ul#quick-links li.social {
-font-size:1em;
-}
-
-.top-bar {
-position:static;
-}
-
-.top-bar .title-area {
-position:static;
-}
-
-.top-bar .toggle-topbar.menu-icon {
-top:20px;
-}
+  ul#quick-links {
+    float: left;
+    padding-top: 10px;
+    margin-left: 0;
+  }
+  .top-bar ul#quick-links li.search,
+  .top-bar ul#quick-links li.login,
+  .top-bar ul#quick-links li.social {
+    font-size: 1em
+  }
+  .top-bar {
+    position: static
+  }
+  .top-bar .title-area {
+    position: static
+  }
+  .top-bar .toggle-topbar.menu-icon {
+    top: 20px
+  }
 }
 
 @media only screen and (max-width: 25em) {
@@ -188,94 +176,81 @@ top:20px;
 }
 
 /** SIDEBAR/ BLOCK STYLE  header & fonts**/
-.block h2,.block h3 {
-border-bottom:1px solid #ccc;
-font-size:1.8em;
-font-weight:normal;
-margin:0 0 10px;
+.block h2,
+.block h3 {
+  border-bottom: 1px solid #ccc;
+  font-size: 1.8em;
+  font-weight: normal;
+  margin: 0 0 10px;
 }
-
 .region-sidebar-first {
-background:#fff;
-border-top:0;
+  background: #fff;
+  border-top: 0;
 }
-
-aside#sidebar-first h2,aside#sidebar-first h3 {
-border-bottom:1px solid #ccc;
-font-size:1.8em;
-font-weight:normal;
-margin:0 0 10px;
-padding:0;
+aside#sidebar-first h2,
+aside#sidebar-first h3 {
+  border-bottom: 1px solid #ccc;
+  font-size: 1.8em;
+  font-weight: normal;
+  margin: 0 0 10px;
+  padding: 0;
 }
-
 .sidebar-first block {
-font-size:1em;
+  font-size: 1em
 }
-
 .block .more-link {
-float:right;
+  float: right
 }
-
 .block {
-margin-bottom:15px;
+  margin-bottom: 15px
 }
-
 /** DEFUALT TEASER STYLE **/
 .node-teaser {
-clear:both;
-margin-bottom:30px;
+  clear: both;
+  margin-bottom: 30px;
 }
-
 .node-teaser .field-type-text-with-summary p {
-margin-bottom:0;
+  margin-bottom: 0
 }
-
 .node-teaser footer {
-font-style:italic;
+  font-style: italic
 }
-
 .node-teaser .submitted,
 .node-teaser ul.links.inline {
-font-size:.875em;
-line-height:1;
-margin-top:5px;
+  font-size: .875em;
+  line-height: 1;
+  margin-top: 5px;
 }
-
 /** FRONTPAGE STYLE TEASER  - on smaller screen then 480px frontpage teaser have simple look, not same as on desktop/tablet resolution**/
 @media only screen and (min-width: 30em)  {
-.node-teaser header {
-position:absolute;
-z-index:100;
-}
-
-.node-teaser header h1 {
-line-height:1.2;
-margin-right:20px;
-margin-top:20px;
-}
-
-.node-teaser header h1 a {
-background:#ffffff;
-color:#333333;
-}
-
-.node-poll header,
-.node-blog header {
-position:relative;
-}
-
-.node-poll header h1,
-.node-blog header h1 {
-line-height:1.2;
-margin-right:0;
-margin-top:0;
-}
-
-.node-poll header h1 a,
-.node-blog header h1 a {
-background:none;
-color:#333333;
-}
+  .node-teaser header {
+    position: absolute;
+    z-index: 100;
+  }
+  .node-teaser header h1 {
+    line-height: 1.2;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  .node-teaser header h1 a {
+    background: #ffffff;
+    color: #333333;
+  }
+  .node-poll header,
+  .node-blog header {
+    position: relative
+  }
+  .node-poll header h1,
+  .node-blog header h1 {
+    line-height: 1.2;
+    margin-right: 0;
+    margin-top: 0;
+  }
+  .node-poll header h1 a,
+  .node-blog header h1 a {
+    background: none;
+    color: #333333;
+  }
   /** FRONPAGE SLIDESHOW SETTINGS **/
   .orbit-container .orbit-slides-container > * h1.orbit-caption {
     font-size: 2.2em;
@@ -358,23 +333,23 @@ ol.readers-choice {
 /** NODE STYLE  taxonomy,  author, footer**/
 
 .field-type-taxonomy-term-reference .field-item {
-display:inline;
-padding-right:5px;
+  display:inline;
+  padding-right:5px;
 }
 
 .field-type-taxonomy-term-reference .field-label,
 .field-type-taxonomy-term-reference .field-items {
-display:inline;
+  display:inline;
 }
 
 .node .submitted,.node ul.links.inline {
-line-height:1;
+  line-height:1;
 }
 
 .page-node- .region-content footer {
-clear:both;
-margin-bottom:20px;
-margin-top:10px;
+  clear:both;
+  margin-bottom:20px;
+  margin-top:10px;
 }
 
 
@@ -404,17 +379,15 @@ margin-top:10px;
 /** DEFUALT IMAGE GALLERY  STYLE**/
 
 figure ul {
-list-style-type:none;
-margin:0;
+  list-style-type: none;
+  margin: 0;
 }
-
 ul.clearing-thumbs {
-margin:0;
+  margin: 0
 }
-
 ul.clearing-thumbs li {
-list-style-type:none;
-margin:0;
+  list-style-type: none;
+  margin: 0;
 }
 
 
@@ -440,25 +413,21 @@ margin:0;
   width: 20%;
 }
 .comment .profile_comment img {
-border:1px solid #d3d7d9;
-margin:0;
+  border: 1px solid #d3d7d9;
+  margin: 0;
 }
-
 .comment .profile_comment .username {
-white-space:nowrap;
+  white-space: nowrap
 }
-
 .comment .comment-submitted p {
-margin-bottom:5px;
+  margin-bottom: 5px
 }
-
 .comment .comment-submitted .comment-time {
-font-size:.75em;
+  font-size: .75em
 }
-
 .comment .comment-submitted .comment-permalink {
-font-size:.75em;
-text-transform:lowercase;
+  font-size: .75em;
+  text-transform: lowercase;
 }
 
 .comment .comment-text {
