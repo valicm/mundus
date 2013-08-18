@@ -34,59 +34,60 @@ function mundus_preprocess_page(&$variables, $hook) {
       and extract it to <em>sites/all/libraries/foundation_icons_all</em>
       </h1>'), 'error');
 
-    // Adding some styling for error message to be visible and easy to understan for end user:
+    // Adding some styling for error message to be visible
+    // and easy to understand for end user:
     drupal_add_css('
       .error {position: fixed; left:5%;right: 0; top:5%; z-index: 500; width:90%; height:90%;}
       .error a {color:#333333;}', array(
       'group' => CSS_THEME,
-      'type' => 'inline'
+      'type' => 'inline',
     ));
   }
 
   // Adding Foundation css:
-  drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all'));
-  drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all'));
+  drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all',));
+  drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all',));
 
   // Adding Foundation icons css:
   drupal_add_css($foundation_icon_path . '/foundation_icons_social/stylesheets/social_foundicons.css', array('
-    media' => 'all'
+    media' => 'all',
   ));
 
   drupal_add_css($foundation_icon_path . '/foundation_icons_general_enclosed/stylesheets/general_enclosed_foundicons.css', array(
-    'media' => 'all'
+    'media' => 'all',
   ));
 
   // Adding Foundation JS library at bottom of page:
-  drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.topbar.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.cookie.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.forms.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.orbit.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.placeholder.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.reveal.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'footer',));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.js', array('scope' => 'footer',));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.topbar.js', array('scope' => 'footer',));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.cookie.js', array('scope' => 'footer',));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.forms.js', array('scope' => 'footer',));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.orbit.js', array('scope' => 'footer',));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.placeholder.js', array('scope' => 'footer',));
+  drupal_add_js($foundation_path . '/js/foundation/foundation.reveal.js', array('scope' => 'footer',));
 
   // Invoke Foundation:
   drupal_add_js('jQuery(document).foundation();', array(
     'type' => 'inline',
-    'scope' => 'footer'
+    'scope' => 'footer',
   ));
 
   // Implements  adding Google fonts:
   if (theme_get_setting('google_font_name') & ('google_font_body')) {
 
     drupal_add_css('http://fonts.googleapis.com/css?family=' . theme_get_setting('google_font_name') . '|' . theme_get_setting('google_font_body') . '', array(
-      'type' => 'external'
+      'type' => 'external',
     ));
 
     drupal_add_css('h1,h2,h3,h4,h5,h6 {font-family: ' . theme_get_setting('google_font_name') . '; }body {font-family: ' . theme_get_setting('google_font_body') . ';}', array(
       'group' => CSS_THEME,
-      'type' => 'inline'
+      'type' => 'inline',
     ));
   }
   else {
     drupal_add_css('http://fonts.googleapis.com/css?family=Merriweather+Sans|Ubuntu', array(
-      'type' => 'external'
+      'type' => 'external',
     ));
   }
 
@@ -95,9 +96,9 @@ function mundus_preprocess_page(&$variables, $hook) {
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lt IE 9',
-      '!IE' => FALSE
+      '!IE' => FALSE,
     ),
-    'preprocess' => TRUE
+    'preprocess' => TRUE,
   ));
 
   // ADD FIXES FOR IE8 mundus style:
@@ -105,9 +106,9 @@ function mundus_preprocess_page(&$variables, $hook) {
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lt IE 9',
-      '!IE' => FALSE
+      '!IE' => FALSE,
     ),
-    'preprocess' => TRUE
+    'preprocess' => TRUE,
   ));
 
   // ADD FIXES FOR IE7 mundus style:
@@ -115,21 +116,21 @@ function mundus_preprocess_page(&$variables, $hook) {
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lt IE 8',
-      '!IE' => FALSE
+      '!IE' => FALSE,
     ),
-    'preprocess' => TRUE
+    'preprocess' => TRUE,
   ));
 
   // Load color style from theme settings:
   drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/style/' . theme_get_setting('mundus_style') . '.css', array(
     'group' => CSS_THEME,
-    'type' => 'file'
+    'type' => 'file',
   ));
 
   // Load color style from theme settings:
   drupal_add_js(drupal_get_path('theme', 'mundus') . '/css/style/' . theme_get_setting('mundus_style') . '.css', array(
     'group' => CSS_THEME,
-    'type' => 'file'
+    'type' => 'file',
   ));
 
   // Adding font family for social icons if we use social icons
@@ -150,7 +151,7 @@ function mundus_preprocess_page(&$variables, $hook) {
            font-weight: normal;
            font-style: normal;}', array(
       'group' => CSS_THEME,
-      'type' => 'inline'
+      'type' => 'inline',
     ));
   }
   else {
@@ -159,8 +160,8 @@ function mundus_preprocess_page(&$variables, $hook) {
 }
 
 /**
-* Add mobile viewport, force IE to chrome frame
-*/
+ * Add mobile viewport, force IE to chrome frame.
+ */
 function mundus_html_head_alter(&$head_elements) {
   // HTML5 charset declaration.
   $head_elements['system_meta_content_type']['#attributes'] = array(
@@ -261,7 +262,7 @@ function mundus_links__system_main_menu($vars) {
           $sub_menu .= '<li class="submenu">' . l($sub_link['#title'], $sub_link['#href']) . '</li>';
         }
       }
-       &output .=!empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
+      $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
 
       // Reset dropdown to prevent duplicates:
       unset($sub_menu);
@@ -297,7 +298,7 @@ function mundus_preprocess_node(&$variables) {
 
   // If the node is a teaser:
   if ($variables['teaser']) {
-  // Allow us to use a different template:
+    // Allow us to use a different template:
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '_teaser';
   }
   // Adding block region to node.tpl.php:
@@ -349,32 +350,33 @@ function mundus_form_alter(&$form, &$form_state) {
 
   // Button style submit:
   if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
-    $form['actions']['submit']['#attributes'] = array('class' =>
-      array(
-      'secondary',
-      'small button',
-      'radius'
-      )
-    );
+    $form['actions']['submit']['#attributes'] = array(
+      'class' => array(
+        'secondary',
+        'small button',
+        'radius',
+        )
+      );
   }
   // Button style preview:
   if (!empty($form['actions']) && !empty($form['actions']['preview'])) {
-    $form['actions']['preview']['#attributes'] =
-    array('class' => array(
-      'secondary',
-      'small button',
-      'radius'
-      )
-    );
+    $form['actions']['submit']['#attributes'] = array(
+      'class' => array(
+        'secondary',
+        'small button',
+        'radius',
+        )
+      );
   }
   // Button style delete:
   if (!empty($form['actions']) && !empty($form['actions']['delete'])) {
-    $form['actions']['delete']['#attributes'] = array('class' => array(
-      'secondary',
-      'small button',
-      'radius'
-      )
-    );
+    $form['actions']['submit']['#attributes'] = array(
+      'class' => array(
+        'secondary',
+        'small button',
+        'radius',
+        )
+      );
   }
 }
 

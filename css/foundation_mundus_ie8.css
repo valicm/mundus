@@ -948,11 +948,11 @@ p.lead {
 }
 .section-container.tabs section .title a,
 .section-container.tabs .section .title a {
-  width: 100%
+  width: 100%;
 }
 .section-container.tabs section:last-child .title,
 .section-container.tabs .section:last-child .title {
-  border-right: 1px solid #cccccc
+  border-right: 1px solid #cccccc;
 }
 .section-container.tabs section .content,
 .section-container.tabs .section .content {
@@ -969,7 +969,7 @@ p.lead {
 }
 .section-container.tabs section.active .content,
 .section-container.tabs .section.active .content {
-  position: relative
+  position: relative;
 }
 .top-bar {
   background: #111111;
@@ -1100,7 +1100,7 @@ p.lead {
   right: 0;
 }
 .top-bar-section ul.right li .dropdown li .dropdown {
-  right: 100%
+  right: 100%;
 }
 .touch .orbit-container .orbit-prev,
 .touch .orbit-container .orbit-next {
