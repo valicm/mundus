@@ -25,6 +25,8 @@ Installation
 Detailed documentation is available here (PDF document + video tutorials)
 http://bit.ly/14N0l85
 
+Editable logo (xcf) is availabile in images folder (you need gimp to open this file)
+
 
 
 DEMO: http://themes.valic.me

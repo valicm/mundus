@@ -353,7 +353,7 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-      )
+      ),
     );
   }
   // Button style preview:
@@ -363,7 +363,7 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-      )
+      ),
     );
   }
   // Button style delete:
@@ -373,7 +373,7 @@ function mundus_form_alter(&$form, &$form_state) {
         'secondary',
         'small button',
         'radius',
-      )
+      ),
     );
   }
 }
