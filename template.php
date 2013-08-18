@@ -45,14 +45,12 @@ function mundus_preprocess_page(&$variables, $hook) {
     );
   }
 
-  // Adding Foundation css:
+  // Adding Foundation css and Foundation icons:
   drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all'));
+  drupal_add_css($foundation_icon_path . '/foundation_icons_social/stylesheets/social_foundicons.css', array('media' => 'all'));
+  drupal_add_css($foundation_icon_path . '/foundation_icons_general_enclosed/stylesheets/general_enclosed_foundicons.css', array('media' => 'all'));
   drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all'));
 
-  // Adding Foundation icons css:
-  drupal_add_css($foundation_icon_path . '/foundation_icons_social/stylesheets/social_foundicons.css', array('media' => 'all'));
-
-  drupal_add_css($foundation_icon_path . '/foundation_icons_general_enclosed/stylesheets/general_enclosed_foundicons.css', array('media' => 'all'));
 
   // Adding Foundation JS library at bottom of page:
   drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'footer'));
@@ -88,18 +86,8 @@ function mundus_preprocess_page(&$variables, $hook) {
     ));
   }
 
-  // ADD FIXES FOR IE8 foundation grid:
+  // ADD FIXES FOR IE8 foundation & mundus grid:
   drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/foundation_mundus_ie8.css', array(
-    'group' => CSS_THEME,
-    'browsers' => array(
-      'IE' => 'lt IE 9',
-      '!IE' => FALSE,
-    ),
-    'preprocess' => TRUE,
-  ));
-
-  // ADD FIXES FOR IE8 mundus style:
-  drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/mundus_ie8.css', array(
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lt IE 9',
@@ -120,12 +108,6 @@ function mundus_preprocess_page(&$variables, $hook) {
 
   // Load color style from theme settings:
   drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/style/' . theme_get_setting('mundus_style') . '.css', array(
-    'group' => CSS_THEME,
-    'type' => 'file',
-  ));
-
-  // Load color style from theme settings:
-  drupal_add_js(drupal_get_path('theme', 'mundus') . '/css/style/' . theme_get_setting('mundus_style') . '.css', array(
     'group' => CSS_THEME,
     'type' => 'file',
   ));
