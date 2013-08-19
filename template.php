@@ -52,7 +52,7 @@ function mundus_preprocess_page(&$variables, $hook) {
   drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all'));
 
   // Adding Foundation JS library at bottom of page:
-  drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'footer'));
+  drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'header'));
   drupal_add_js($foundation_path . '/js/foundation/foundation.js', array('scope' => 'footer'));
   drupal_add_js($foundation_path . '/js/foundation/foundation.topbar.js', array('scope' => 'footer'));
   drupal_add_js($foundation_path . '/js/foundation/foundation.cookie.js', array('scope' => 'footer'));
