@@ -18,7 +18,7 @@ function mundus_preprocess_page(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_html() for .tpl.php.
+ *  Preprocess variables for html.tpl.php
  */
 function mundus_preprocess_html(&$vars) {
 
