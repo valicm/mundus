@@ -18,7 +18,7 @@ function mundus_preprocess_page(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_html()
+ * Implements hook_preprocess_html() for .tpl.php.
  */
 function mundus_preprocess_html(&$vars) {
 
@@ -63,10 +63,9 @@ function mundus_preprocess_html(&$vars) {
       </h1>'), 'error');
   }
 
-  // Sanitize user provided text before printing 
+  // Sanitize user provided text before printing.
   $font_name = check_plain(theme_get_setting('google_font_name'));
   $font_body = check_plain(theme_get_setting('google_font_body'));
-
 
   if (theme_get_setting('google_font_body')) {
     $font_body = check_plain(theme_get_setting('google_font_body'));
@@ -91,7 +90,6 @@ function mundus_preprocess_html(&$vars) {
     'group' => CSS_THEME,
     'type' => 'inline',
   ));
-
 
   // ADD FIXES FOR IE8 foundation & mundus grid:
   drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/foundation_mundus_ie8.css', array(
@@ -223,7 +221,7 @@ function mundus_links__system_main_menu($vars) {
           $sub_menu .= '<li class="submenu">' . l($sub_link['#title'], $sub_link['#href']) . '</li>';
         }
       }
-      $output .=!empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
+      $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
 
       // Reset dropdown to prevent duplicates:
       unset($sub_menu);
