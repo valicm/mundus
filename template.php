@@ -64,9 +64,6 @@ function mundus_preprocess_html(&$vars) {
   }
 
   // Sanitize user provided text before printing.
-  $font_name = check_plain(theme_get_setting('google_font_name'));
-  $font_body = check_plain(theme_get_setting('google_font_body'));
-
   if (theme_get_setting('google_font_body')) {
     $font_body = check_plain(theme_get_setting('google_font_body'));
   }
