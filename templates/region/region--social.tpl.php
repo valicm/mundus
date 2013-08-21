@@ -34,7 +34,7 @@
 <ul id="social-profile" class="inline-list">
   <?php if (theme_get_setting('twitter_username')): ?>
     <li>
-      <a href="http://www.twitter.com/<?php echo theme_get_setting('twitter_username'); ?>" target="_blank" rel="me">
+      <a href="http://www.twitter.com/<?php echo check_plain(theme_get_setting('twitter_username')); ?>" target="_blank" rel="me">
         <i class="foundicon-social-twitter"></i>
       </a>
     </li>
@@ -42,7 +42,7 @@
 
   <?php if (theme_get_setting('facebook_username')): ?>
     <li>
-      <a href="http://www.facebook.com/<?php echo theme_get_setting('facebook_username'); ?>" target="_blank" rel="me">
+      <a href="http://www.facebook.com/<?php echo check_plain(theme_get_setting('facebook_username')); ?>" target="_blank" rel="me">
         <i class="foundicon-social-facebook"></i>
       </a>
     </li>
@@ -50,7 +50,7 @@
 
   <?php if (theme_get_setting('linkedin_username')): ?>
     <li>
-      <a href="http://www.linkedin.com/in/<?php echo theme_get_setting('linkedin_username'); ?>" target="_blank" rel="me">
+      <a href="http://www.linkedin.com/in/<?php echo check_plain(theme_get_setting('linkedin_username')); ?>" target="_blank" rel="me">
         <i class="foundicon-social-linkedin"></i>
       </a>
     </li>
@@ -58,7 +58,7 @@
 
   <?php if (theme_get_setting('google_plus_username')): ?>
     <li>
-      <a href="http://plus.google.com/<?php echo theme_get_setting('google_plus_username'); ?>" target="_blank" rel="me">
+      <a href="http://plus.google.com/<?php echo check_plain(theme_get_setting('google_plus_username')); ?>" target="_blank" rel="me">
         <i class="foundicon-social-google-plus"></i>
       </a>
     </li>
@@ -66,7 +66,7 @@
 
   <?php if (theme_get_setting('rss_url')): ?>
     <li>
-      <a href="<?php echo theme_get_setting('rss_url'); ?>">
+      <a href="<?php echo check_plain(theme_get_setting('rss_url')); ?>">
         <i class="foundicon-social-rss"></i>
       </a>
     </li>
