@@ -3,7 +3,6 @@
   max-width: 71.25em;
 }
 
-
 /** TOP BAR STYLE **/
 .topline {
   background: #111111;
@@ -18,7 +17,6 @@
 .top-bar-section ul {
   background: #111111;
 }
-
 
 .top-bar .title-area {
   margin-left: 0;
@@ -549,4 +547,9 @@ separate class for several icons **/
 
 .foundicon-social-google-plus:before {
   content: "\f00d";
+}
+
+/** Added error link style **/
+.error a {
+  color:#333333;
 }

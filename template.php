@@ -6,21 +6,49 @@
  * Mundus and Foundation integration.
  */
 
-
 /**
  * Implements themename_preprocess_page().
  */
-function mundus_preprocess_page(&$variables, $hook) {
+function mundus_preprocess_page(&$variables) {
 
   // RENDER SEARCH FROM INSIDE PAGE TEMPLATE:
-  $mundus_search = drupal_render(drupal_get_form('search_form'));
+  $mundus_search_init = drupal_get_form('search_form');
+  $mundus_search = drupal_render($mundus_search_init);
   $variables['mundus_search'] = $mundus_search;
+}
+
+/**
+ * Implements hook_preprocess_html()
+ */
+function mundus_preprocess_html(&$vars) {
 
   // Using libraries to get foundation framework:
   if (module_exists('libraries') && $path = libraries_get_path('foundation') & $path_icons = libraries_get_path('foundation_icons_all')) {
     // If the libraries module exists:
     $foundation_path = $path;
     $foundation_icon_path = $path_icons;
+
+    // Adding Foundation css and Foundation icons:
+    drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all'));
+    drupal_add_css($foundation_icon_path . '/foundation_icons_social/stylesheets/social_foundicons.css', array('media' => 'all'));
+    drupal_add_css($foundation_icon_path . '/foundation_icons_general_enclosed/stylesheets/general_enclosed_foundicons.css', array('media' => 'all'));
+    drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all'));
+
+    // Adding Foundation JS library at bottom of page:
+    drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'header'));
+    drupal_add_js($foundation_path . '/js/foundation/foundation.js', array('scope' => 'footer'));
+    drupal_add_js($foundation_path . '/js/foundation/foundation.topbar.js', array('scope' => 'footer'));
+    drupal_add_js($foundation_path . '/js/foundation/foundation.cookie.js', array('scope' => 'footer'));
+    drupal_add_js($foundation_path . '/js/foundation/foundation.forms.js', array('scope' => 'footer'));
+    drupal_add_js($foundation_path . '/js/foundation/foundation.orbit.js', array('scope' => 'footer'));
+    drupal_add_js($foundation_path . '/js/foundation/foundation.placeholder.js', array('scope' => 'footer'));
+    drupal_add_js($foundation_path . '/js/foundation/foundation.reveal.js', array('scope' => 'footer'));
+
+    // Invoke Foundation:
+    drupal_add_js('jQuery(document).foundation();', array(
+      'type' => 'inline',
+      'scope' => 'footer',
+    ));
   }
 
   // If it's just not available, display a message to the user:
@@ -33,57 +61,37 @@ function mundus_preprocess_page(&$variables, $hook) {
       <a href="http://zurb.com/playground/uploads/upload/upload/146/foundation_icons_all.zip" target="_blank">Click here</a>
       and extract it to <em>sites/all/libraries/foundation_icons_all</em>
       </h1>'), 'error');
-
-    // Adding some styling for error message to be visible
-    // and easy to understand for end user:
-    drupal_add_css('
-      .error {position: fixed; left:5%;right: 0; top:5%; z-index: 500; width:90%; height:90%;}
-      .error a {color:#333333;}', array(
-        'group' => CSS_THEME,
-        'type' => 'inline',
-      )
-    );
   }
 
-  // Adding Foundation css and Foundation icons:
-  drupal_add_css($foundation_path . '/css/foundation.css', array('media' => 'all'));
-  drupal_add_css($foundation_icon_path . '/foundation_icons_social/stylesheets/social_foundicons.css', array('media' => 'all'));
-  drupal_add_css($foundation_icon_path . '/foundation_icons_general_enclosed/stylesheets/general_enclosed_foundicons.css', array('media' => 'all'));
-  drupal_add_css($foundation_path . '/css/normalize.css', array('media' => 'all'));
+  // Sanitize user provided text before printing 
+  $font_name = check_plain(theme_get_setting('google_font_name'));
+  $font_body = check_plain(theme_get_setting('google_font_body'));
 
-  // Adding Foundation JS library at bottom of page:
-  drupal_add_js($foundation_path . '/js/vendor/custom.modernizr.js', array('scope' => 'header'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.topbar.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.cookie.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.forms.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.orbit.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.placeholder.js', array('scope' => 'footer'));
-  drupal_add_js($foundation_path . '/js/foundation/foundation.reveal.js', array('scope' => 'footer'));
 
-  // Invoke Foundation:
-  drupal_add_js('jQuery(document).foundation();', array(
-    'type' => 'inline',
-    'scope' => 'footer',
-  ));
-
-  // Implements  adding Google fonts:
-  if (theme_get_setting('google_font_name') & ('google_font_body')) {
-
-    drupal_add_css('http://fonts.googleapis.com/css?family=' . theme_get_setting('google_font_name') . '|' . theme_get_setting('google_font_body') . '', array(
-      'type' => 'external',
-    ));
-
-    drupal_add_css('h1,h2,h3,h4,h5,h6 {font-family: ' . theme_get_setting('google_font_name') . '; }body {font-family: ' . theme_get_setting('google_font_body') . ';}', array(
-      'group' => CSS_THEME,
-      'type' => 'inline',
-    ));
+  if (theme_get_setting('google_font_body')) {
+    $font_body = check_plain(theme_get_setting('google_font_body'));
   }
   else {
-    drupal_add_css('http://fonts.googleapis.com/css?family=Merriweather+Sans|Ubuntu', array(
-      'type' => 'external',
-    ));
+    $font_body = 'Ubuntu';
   }
+
+  if (theme_get_setting('google_font_name')) {
+    $font_name = check_plain(theme_get_setting('google_font_name'));
+  }
+  else {
+    $font_name = 'Merriweather+Sans';
+  }
+
+  // Implements  adding Google fonts:
+  drupal_add_css('http://fonts.googleapis.com/css?family=' . $font_name . '|' . $font_body . '', array(
+    'type' => 'external',
+  ));
+
+  drupal_add_css('h1,h2,h3,h4,h5,h6 {font-family: ' . $font_name . '; }body {font-family: ' . $font_body . ';}', array(
+    'group' => CSS_THEME,
+    'type' => 'inline',
+  ));
+
 
   // ADD FIXES FOR IE8 foundation & mundus grid:
   drupal_add_css(drupal_get_path('theme', 'mundus') . '/css/foundation_mundus_ie8.css', array(
@@ -110,32 +118,6 @@ function mundus_preprocess_page(&$variables, $hook) {
     'group' => CSS_THEME,
     'type' => 'file',
   ));
-
-  // Adding font family for social icons if we use social icons
-  // (quick fix regarding not able to use directly modified files
-  // inside drupal regarding licensing third party code
-  // (without this inline css, icons will use font from general icon set,
-  // and display them wrong)
-  // Check if we use social profiles feature:
-  if (theme_get_setting('social_profiles_top')) {
-    drupal_add_css(
-        '@font-face {
-           font-family: "SocialFoundicons";
-           src: url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.eot");
-           src: url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.eot?#iefix") format("embedded-opentype"),
-                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.woff") format("woff"),
-                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.ttf") format("truetype"),
-                url("' . $foundation_icon_path . '/foundation_icons_social/fonts/social_foundicons.svg#SocialFoundicons") format("svg");
-           font-weight: normal;
-           font-style: normal;}', array(
-             'group' => CSS_THEME,
-             'type' => 'inline',
-           )
-        );
-  }
-  else {
-    // We are not doing anything in case when social profiles are not enabled!
-  }
 }
 
 /**
@@ -228,7 +210,7 @@ function mundus_links__system_main_menu($vars) {
   $output = '';
   $sub_menu = '';
 
-  foreach ($menu_links as $key => $link) {
+  foreach ($menu_links as $link) {
     // Add special class needed for Foundation dropdown menu to work:
     !empty($link['#below']) ? $link['#attributes']['class'][] = 'has-dropdown' : '';
 
@@ -236,12 +218,12 @@ function mundus_links__system_main_menu($vars) {
     if (!empty($link['#href'])) {
       $output .= '<li' . drupal_attributes($link['#attributes']) . '>' . l($link['#title'], $link['#href']);
       // Get sub navigation links if they exist:
-      foreach ($link['#below'] as $key => $sub_link) {
+      foreach ($link['#below'] as $sub_link) {
         if (!empty($sub_link['#href'])) {
           $sub_menu .= '<li class="submenu">' . l($sub_link['#title'], $sub_link['#href']) . '</li>';
         }
       }
-      $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
+      $output .=!empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
 
       // Reset dropdown to prevent duplicates:
       unset($sub_menu);
@@ -312,7 +294,7 @@ function mundus_field($variables) {
     $output .= '<div ' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
   }
 
-  foreach ($variables['items'] as $delta => $item) {
+  foreach ($variables['items'] as $item) {
     $output .= drupal_render($item);
   }
 
@@ -372,7 +354,7 @@ function mundus_breadcrumb($vars) {
 
     $breadcrumbs .= '<ul class="breadcrumbs">';
 
-    foreach ($breadcrumb as $key => $value) {
+    foreach ($breadcrumb as $value) {
       $breadcrumbs .= '<li>' . $value . '</li>';
     }
 

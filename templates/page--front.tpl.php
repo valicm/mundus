@@ -148,7 +148,12 @@
                       </a>
                       <div id="login-mundus" class="reveal-modal">
                         <div class="large-6 columns">
-                          <?php print drupal_render(drupal_get_form('user_login')); ?>
+                          <?php
+                          /* @var $mundus_ul type */
+                          $mundus_ul = drupal_get_form("user_login");
+                          $mundus_ul_form = drupal_render($mundus_ul);
+                          echo $mundus_ul_form;
+                          ?>
                           <ul class="inline-list">
                             <li> <?php print l(t(' Create an account '), 'user/register'); ?></a><li>
                             <li> <?php print l(t(' Forgot your password? '), 'user/password'); ?></a><li>

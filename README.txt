@@ -2,6 +2,7 @@ Drupal 7 responsive theme built on top of Foundation 4.
 
 Requirements
 - Jquery update module (check documentation below)
+- Libraries API module (https://drupal.org/project/libraries)
 - Foundation 4 framework & Foundation icons (instructions below)
 
 Installation
