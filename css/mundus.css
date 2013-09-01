@@ -14,6 +14,10 @@
   width: 100%;
 }
 
+.top-bar {
+  margin-bottom: 0;
+}
+
 .top-bar-section ul {
   background: #111111;
 }
@@ -552,4 +556,21 @@ separate class for several icons **/
 /** Added error link style **/
 .error a {
   color: #333333;
+}
+
+
+/** Adding style for code, pre **/
+code, kbd, pre, samp {
+  display: block;
+  padding: 0.375em 0.875em 0.5625em;
+  overflow: hidden;
+  margin-left: 0;
+  list-style: none;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #f6f6f6;
+  border-color: gainsboro;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-weight:normal;
 }
