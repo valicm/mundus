@@ -558,9 +558,11 @@ separate class for several icons **/
   color: #333333;
 }
 
-
 /** Adding style for code, pre **/
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   display: block;
   padding: 0.375em 0.875em 0.5625em;
   overflow: hidden;
