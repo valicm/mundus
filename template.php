@@ -301,7 +301,7 @@ function mundus_field($variables) {
 
 /**
  * Implements hook_form_alter().
- * Change style output of buttons
+ * Change style output of buttons.
  *
  * @see hook_form_alter()
  *
