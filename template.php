@@ -300,7 +300,12 @@ function mundus_field($variables) {
 }
 
 /**
- * Button styling.
+ * Implements hook_form_alter().
+ * Change style output of buttons
+ *
+ * @see hook_form_alter()
+ *
+ * @ingroup themeable
  */
 function mundus_form_alter(&$form, &$form_state) {
 
