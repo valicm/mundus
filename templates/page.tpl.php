@@ -103,7 +103,7 @@
                 <?php if (theme_get_setting('mundus_search_top')): ?>
                   <li class="search">
                     <a href="#" data-reveal-id="search-mundus">
-                      <?php print t('Search '); ?>
+                      <?php print t('Search'); ?>
                       <i class="foundicon-search"></i>
                     </a>
                     <div id="search-mundus" class="reveal-modal">
@@ -120,7 +120,7 @@
                 <?php if (theme_get_setting('social_profiles_top')): ?>
                   <li class="social">
                     <a href="#" data-reveal-id="social-mundus">
-                      <?php print t('Social '); ?>
+                      <?php print t('Social'); ?>
                       <i class="foundicon-people"></i>
                     </a>
                     <div id="social-mundus" class="reveal-modal">
@@ -142,7 +142,7 @@
 
                     <li class="login">
                       <a href="#" data-reveal-id="login-mundus">
-                        <?php print t('Log in '); ?>
+                        <?php print t('Log in'); ?>
                         <i class="foundicon-lock"></i>
                       </a>
                       <div id="login-mundus" class="reveal-modal">
@@ -154,8 +154,8 @@
                           echo $mundus_ul_form;
                           ?>
                           <ul class="inline-list">
-                            <li> <?php print l(t(' Create an account '), 'user/register'); ?></a><li>
-                            <li> <?php print l(t(' Forgot your password? '), 'user/password'); ?></a><li>
+                            <li> <?php print l(t('Create an account'), 'user/register'); ?></a><li>
+                            <li> <?php print l(t('Forgot your password?'), 'user/password'); ?></a><li>
                           </ul>
                         </div>
                         <div class="large-6 columns">

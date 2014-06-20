@@ -22,13 +22,13 @@ function mundus_form_system_theme_settings_alter(&$form, $form_state) {
     '#type' => 'textfield',
     '#title' => t('Google font headings (h1,h2,h3,h4,h5,h6)'),
     '#default_value' => theme_get_setting('google_font_name'),
-    '#description' => t("Enter Google font name, default used is Merriweather Sans. Put in this field name of font without + sign, e.g Merriweather Sans, not Merriweather+Sans "),
+    '#description' => t("Enter Google font name, default used is Merriweather Sans. Put in this field name of font without + sign, e.g Merriweather Sans, not Merriweather+Sans"),
   );
   $form['google_font_choice']['google_font_body'] = array(
     '#type' => 'textfield',
     '#title' => t('Google font body'),
     '#default_value' => theme_get_setting('google_font_body'),
-    '#description' => t("Enter Google font name, default used is Ubuntu. Put in this field name of font without + sign, e.g Merriweather Sans, not Merriweather+Sans "),
+    '#description' => t("Enter Google font name, default used is Ubuntu. Put in this field name of font without + sign, e.g Merriweather Sans, not Merriweather+Sans"),
   );
   $form['mundus_color'] = array(
     '#type' => 'fieldset',
