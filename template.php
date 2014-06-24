@@ -310,35 +310,40 @@ function mundus_field($variables) {
  */
 function mundus_form_alter(&$form, &$form_state) {
 
-  // Button style submit:
-  if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
-    $form['actions']['submit']['#attributes'] = array(
-      'class' => array(
-        'secondary',
-        'small button',
-        'radius',
-      ),
+  if (!empty($form['actions'])) {
+    $classes = array(
+      'secondary',
+      'small button',
+      'radius',
     );
-  }
-  // Button style preview:
-  if (!empty($form['actions']) && !empty($form['actions']['preview'])) {
-    $form['actions']['submit']['#attributes'] = array(
-      'class' => array(
-        'secondary',
-        'small button',
-        'radius',
-      ),
-    );
-  }
-  // Button style delete:
-  if (!empty($form['actions']) && !empty($form['actions']['delete'])) {
-    $form['actions']['submit']['#attributes'] = array(
-      'class' => array(
-        'secondary',
-        'small button',
-        'radius',
-      ),
-    );
+
+    // Button style submit:
+    if (!empty($form['actions']['submit'])) {
+      if (isset($form['actions']['submit']['#attributes']['class'])) {
+        $form['actions']['submit']['#attributes']['class'] = array_merge($form['actions']['submit']['#attributes']['class'], $classes);
+      }
+      else {
+        $form['actions']['submit']['#attributes']['class'] = $classes;
+      }
+    }
+    // Button style preview:
+    if (!empty($form['actions']['preview'])) {
+      if (isset($form['actions']['preview']['#attributes']['class'])) {
+        $form['actions']['preview']['#attributes']['class'] = array_merge($form['actions']['preview']['#attributes']['class'], $classes);
+      }
+      else {
+        $form['actions']['preview']['#attributes']['class'] = $classes;
+      }
+    }
+    // Button style delete:
+    if (!empty($form['actions']['delete'])) {
+      if (isset($form['actions']['delete']['#attributes']['class'])) {
+        $form['actions']['delete']['#attributes']['class'] = array_merge($form['actions']['delete']['#attributes']['class'], $classes);
+      }
+      else {
+        $form['actions']['delete']['#attributes']['class'] = $classes;
+      }
+    }
   }
 }
 
