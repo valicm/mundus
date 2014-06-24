@@ -198,36 +198,75 @@ function mundus_css_alter(&$css) {
  * Style main menu / show submenu as dropdown.
  */
 function mundus_links__system_main_menu($vars) {
-  // Get all the main menu links.
-  $menu_links = menu_tree_output(menu_tree_all_data('main-menu'));
+  // We need to fetch the links ourselves because we need the entire tree.
+  $links = menu_tree_output(menu_tree_all_data(variable_get('menu_main_links_source', 'main-menu')));
+  $output = _mundus_links($links);
 
-  // Initialize some variables to prevent errors.
-  $output = '';
-  $sub_menu = '';
-
-  foreach ($menu_links as $link) {
-    // Add special class needed for Foundation dropdown menu to work:
-    !empty($link['#below']) ? $link['#attributes']['class'][] = 'has-dropdown' : '';
-
-    // Render top level and make sure we have an actual link:
-    if (!empty($link['#href'])) {
-      $output .= '<li' . drupal_attributes($link['#attributes']) . '>' . l($link['#title'], $link['#href']);
-      // Get sub navigation links if they exist:
-      foreach ($link['#below'] as $sub_link) {
-        if (!empty($sub_link['#href'])) {
-          $sub_menu .= '<li class="submenu">' . l($sub_link['#title'], $sub_link['#href']) . '</li>';
-        }
-      }
-      $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
-
-      // Reset dropdown to prevent duplicates:
-      unset($sub_menu);
-      $sub_menu = '';
-
-      $output .= '</li>';
-    }
-  }
   return '<ul class="left">' . $output . '</ul>';
+}
+ /**
+  * Helper function to output a Drupal menu as a Foundation Top Bar.
+  *
+  * @param array $links
+  *   An array of menu links.
+  *
+  * @return string
+  *   A rendered list of links, with no <ul> or <ol> wrapper.
+  *
+  * @see mundus_links__system_main_menu()
+  * @see mundus_links__system_secondary_menu()
+  */
+function _mundus_links($links) {
+  $output = '';
+
+  foreach (element_children($links) as $key) {
+    $output .= _mundus_render_link($links[$key]);
+  }
+
+  return $output;
+}
+
+/**
+ * Helper function to recursively render sub-menus.
+ *
+ * @param array $link
+ *   An array of menu links.
+ *
+ * @return string
+ *   A rendered list of links, with no <ul> or <ol> wrapper.
+ *
+ * @see _mundus_links()
+ */
+function _mundus_render_link($link) {
+  $output = '';
+
+  // This is a duplicate link that won't get the dropdown class and will only
+  // show up in small-screen.
+  $small_link = $link;
+
+  if (!empty($link['#below'])) {
+    $link['#attributes']['class'][] = 'has-dropdown';
+  }
+
+  // Render top level and make sure we have an actual link.
+  if (!empty($link['#href'])) {
+    $output .= '<li' . drupal_attributes($link['#attributes']) . '>' . l($link['#title'], $link['#href']);
+
+    // Add repeated link under the dropdown for small-screen.
+    $small_link['#attributes']['class'][] = 'show-for-small';
+    $sub_menu = '<li' . drupal_attributes($small_link['#attributes']) . '>' . l($link['#title'], $link['#href']);
+
+    // Build sub nav recursively.
+    foreach ($link['#below'] as $sub_link) {
+      if (!empty($sub_link['#href'])) {
+        $sub_menu .= _mundus_render_link($sub_link);
+      }
+    }
+
+    $output .= !empty($link['#below']) ? '<ul class="dropdown">' . $sub_menu . '</ul>' : '';
+    $output .= '</li>';
+  }
+  return $output;
 }
 
 /**
